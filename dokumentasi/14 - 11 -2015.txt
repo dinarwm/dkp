@@ -1,0 +1,55 @@
+- kasih timeline pengerjaan
+
+RETRIBUSI
+v ada lonjakan penurunan pendapatan (dibuat grafik)
+- status surat, apakah sudah ditindak lanjuti / belum
+- review grafik dr PDAM
+v membandingkan per periode
+- jumlah yang disetorkan ke DKP dr PDAM
+  dikasih keterangan : target, rincian setor, minus
+v grouping : per wilayah (U,S,B,T,pusat), per kecamatan, kelurahan
+- grouping saat membandingkan data dg PDAM yg baru
+- notifikasi (belum ada tindak lanjut, respon) kalau ada respon, dimasukkan sbg arsip (upload surat dr PDAM)
+- non PDAM -> pikirkan kelurahan menginputkan gmn, tiap bulan ditagih --> kelurahan bisa bayar berapa bulan kedepan
+- PDAM -> tiap bulan bayarnya, tapi nunggak juga bisa
+v dari grouping non PDAM, dikasih nama camat/lurah -> pikirkan ada pergantian pejabat juga
+- macam2 surat tanya ke mas denna
+v upload gambar --> untuk laporan yang sudah disurvey
+
+v ALUR SURVEY : di grouping, tentukan petugas survey, print surat tugas, berangkat survey, petugas survey laporan (pikirkan bentuknya) 
+v HASIL SURVEY : sesuai / tidak, alasan, informasi dapat darimana, bukti (foto)
+
+
+GUDANG
+- kode rekening : barang modal (ada kontrolling kondisi), barang pakai habis
+
+1. entri pengadaan yang sudah ada, jumlahnya berapa
+   --> berita acara, penerimaan, no SPK, darimana yang mengadakan barang, kegiatan, nomor rekening, harga per item barang (minta contoh template)
+   --> pemeriksaan BPKP
+   --> masuk gudang
+   --> barcode
+   --> pembayaran
+
+2. menyalurkan :
+	surat permintaan --> ke DKP --> ngeprint bend 29 --> ngurangi stok
+	isi kartu persediaan barang (tiap barang, unya 1 kartu persediaan barang)
+	laporan bulanan (stok per bulan)
+	stok opname (tahunan) --> nyusun neraca
+
+v Out -> harus ada surat order barang -> tanpa upload di sistem -> ttd elektronik
+- Login,user privillege ex:orang PJU gaboleh minta tanaman
+v ada historis, siapa yg minta dan melayani
+v setelah barang keluar, dicatat digunakan dimana (sbg laporan, maks 2x24 stlh keluar)
+v ada notifikasi (ex: belum ada laporan lokasi penggunaan barang)
+v macam2 surat tanya ke mas fathan
+v ada grouping per bidang, per kasi, per gudang, rak penyimpanan (optional), per kode rekening (kertas, lampu)
+v report tanya mas fathan, yg diperiksa BPK apa aja, bisa di preview & printout, ada filter grouping
+v ada status barang : rusak (foto), hilang (bukti : keterangan dr kepolisian)
+v tanya : semua barang yg keluar ada kontrolling status barang atau nggak
+v ada list penanggung jawab gudang penyimpanan
+- kedepannya : bisa dikasih titik koordinat barang diletakkan dan laporannya. Setiap 3 bulan sekali dicek barangnya
+- kedepannya : ada grafik keluar masuk barang
+- bensin --> barang yg gak masuk gudang, karung 
+- kedepannya : bisa ngambil data dari SI barang modal buat digabungin
+
+wkwk : BE8B5B7301

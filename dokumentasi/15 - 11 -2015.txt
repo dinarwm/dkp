@@ -1,0 +1,69 @@
+Agenda :
+Pembuatan DB
+Pembuatan Timeline
+
+Hasil :
+GUDANG
+- rekap barang -> laporan seluruh barang dan statusnya
+- menu status barang :
+  1. view semua barang
+     - no, bidang, kasi, gudang, rak, jenis barang, kode rek, nama barang, status (pemeriksaan, masuk gudang, proses pembayaran, OK), kondisi barang
+     - ada filter bidang (wajib dipilih), kasi, gudang, rak, kode rekening (optional, bisa diisi)
+  2. view sesuai filter
+- penyaluran barang :
+  1. pilih apa saja yang diminta (by scan)
+  2. generate surat
+  3. ttd elektronik
+  4. kurangi stok di DB
+  5. ganti status OUT
+- rekap penyaluran barang --> ada filter ( by tanggal / by kode )
+- home :
+  1. dikasih kotak notifikasi detail barang yang belum dilaporkan lokasinya
+- report bukti pengeluaran barang -> filter by nomor surat
+- pencarian barang : detail barang modal kalo rusak / hilang ada foto bukti
+- ganti kondisi barang (hilang/rusak) -> muncul popup upload gambar bukti
+- pelaporan barang :
+  1. view laporan semua penyaluran barang (ada status done)
+  2. tombol tambah bukti laporan :
+     - view per barang yang dikasih
+     - kalo sudah upload, di barang muncul foto
+     - kalo belum, ada tombl upload foto
+
+
+RETRIBUSI
+- home :
+  1. grafik lonjakan penurunan pendapat
+  2. 
+- perbandingan retribusi : bandingkan 2 periode
+- retribusi baru : autoreplace
+- pencarian pelanggan 
+  1. view semua pelanggan (no, nama, wilayah, kec, kel, PDAM/non, alamat, telp, aksi (detail))
+  2. filter pelanggan (wilayah (WAJIB), kecamatan, kelurahan, nama (optional))
+- survey baru : 
+  1. pilih wilayah survey (filter grouping)
+  2. isi nama surveyor
+  3. generate surat tugas
+- laporan survey
+  1. view survey yang belum dilaporkan (klik tombol lapor)
+  2. checkbox sesuai / tidak
+  3. isi alasan
+  4. sumber informasi
+  5. upload butki (foto)
+ 
+
+Tugas :
+- cari cara membaca QR code : --> Z bar QRcode (library androidstudio)
+  1. bisa buat out / mengurangi stok, 
+  2. bisa buat lihat detail barang
+- cari tau gmn caranya membedakan LUNAS / BELUM LUNAS itu termasuk pelanggan PDAM atau non PDAM
+
+Tanya :
+GUDANG :
+- untuk kasus PJU gaboleh pinjem tanaman, itu diperiksa manual oleh pegawai gudang atau sistem? kalo sistem -> orang luar bisa login
+- kode rekening itu apa? 1 kode = 1 barang atau 1 kode = 1 jenis barang?
+
+RETRIBUSI :
+- review grafik dr PDAM maksudnya apa?
+- jadinya data mentah berupa excel / txt?
+- tau pelanggan saat itu bayar untuk periode yang kapan darimana?
+- surat apa aja yang masuk & keluar ?
