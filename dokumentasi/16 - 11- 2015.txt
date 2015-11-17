@@ -1,0 +1,19 @@
+GUDANG
+
+- Tiap pengadaan barang dikasih harga (termasuk pajak)
+- Bisa CRUD jenis barang
+- Kode rekening jgn jadi primary key karena bisa beda-beda
+- Kode 523 : barang modal , 522: Barang pakai habis
+- User ada 5 (4 Gudang, 1Admin)
+- Pembuatan Neraca perGudang
+- 1 Barcode 1 Jenis
+
+
+RETRIBUSI
+
+Berdasarkan data PDAM saja
+- Potensi Non RT/ RT -> Data Induk, pasti untuk periode itu
+- Bikin perbandingan data tunggak
+- Surat-surat
+   1. Surat Ketetapan -> Untuk pelanggan baru(kedepannya bisa cek sudah dipungut atau blm)
+   2. Surat Penyesuaian tarif 
