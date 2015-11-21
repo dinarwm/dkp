@@ -46,7 +46,7 @@
   <style>
     .error {color: #FF0000;}
   </style>
-  <body class="skin-red-light sidebar-mini fixed ">
+  <body class="skin-green-light sidebar-mini fixed ">
   <!-- <div id="preloader">Loading... Please Wait.</div> -->
     <div id="container" class="wrapper">
       
@@ -56,7 +56,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="<?php echo base_url() ?>assets/kecil.png"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><!-- <img src="<?php echo base_url() ?>assets/kecil.png"> --> <!-- <img src="<?php echo base_url() ?>assets/cass3.png" height="43px"> --></span>
+          <span class="logo-lg">DKP</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -132,12 +132,12 @@
 
                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url(); ?>pengadaanBarangController/pengadaan"><i class="fa fa-circle-o"></i> Pengadaan</a></li>
-                    <li><a href="<?php echo base_url(); ?>pengadaanBarangController/pemda"><i class="fa fa-circle-o"></i> Pemda</a></li>
-                    <li><a href="<?php echo base_url(); ?>pengadaanBarangController/hibah"><i class="fa fa-circle-o"></i> Hibah</a></li>
+                    <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pengadaan"><i class="fa fa-circle-o"></i> Pengadaan</a></li>
+                    <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pemda"><i class="fa fa-circle-o"></i> Pemda</a></li>
+                    <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/hibah"><i class="fa fa-circle-o"></i> Hibah</a></li>
                   </ul>
                 </li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Status Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Status Barang</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -145,8 +145,8 @@
                 <i class="fa fa-truck"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -154,8 +154,8 @@
                 <i class="fa fa-search"></i> <span>Pencarian</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Barang</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Penanggungjawab Gudang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Penanggungjawab Gudang</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -163,11 +163,11 @@
                 <i class="fa fa-book"></i> <span>Report</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
                 <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
                 <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
               </ul>
             </li>
@@ -176,8 +176,8 @@
                 <i class="fa fa-gear"></i> <span>Manajemen</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
               </ul>
             </li>
           </ul>
