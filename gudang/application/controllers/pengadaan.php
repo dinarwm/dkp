@@ -12,6 +12,3 @@ class Pengadaan extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 }
-
-/* End of file homeController.php */
-/* Location: ./application/controllers/homeController.php */

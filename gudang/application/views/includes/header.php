@@ -154,8 +154,8 @@
                 <i class="fa fa-search"></i> <span>Pencarian</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Barang</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Penanggungjawab Gudang</a></li>
+                <li><a href="<?php echo base_url(); ?>pencarian/barang"><i class="fa fa-circle-o"></i>Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>pencarian/pjgudang"><i class="fa fa-circle-o"></i>Penanggungjawab Gudang</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -165,10 +165,10 @@
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
-                <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
-                <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
+                <li class="active"><a href="<?php echo base_url(); ?>report/buktiPengeluaranBarang"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/kartuPersediaanBarang"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
+                <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
               </ul>
             </li>
             <li class="treeview">
