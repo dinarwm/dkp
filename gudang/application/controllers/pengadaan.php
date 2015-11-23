@@ -11,4 +11,10 @@ class Pengadaan extends CI_Controller {
 		$this->load->view('pengadaan/pengadaanBaru/'.$sumber.'/index');
 		$this->load->view('includes/footer');
 	}
+
+	public function statusBarang(){
+		$this->load->view('includes/header');
+		$this->load->view('pengadaan/statusBarang/index');
+		$this->load->view('includes/footer');
+	}
 }

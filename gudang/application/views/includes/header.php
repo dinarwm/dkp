@@ -137,7 +137,7 @@
                     <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/hibah"><i class="fa fa-circle-o"></i> Hibah</a></li>
                   </ul>
                 </li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Status Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>pengadaan/statusBarang"><i class="fa fa-circle-o"></i>Status Barang</a></li>
               </ul>
             </li>
             <li class="treeview">
