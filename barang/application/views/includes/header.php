@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Retribusi DKP</title>
+    <title>Gudang DKP</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url(); ?>bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -17,6 +17,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url(); ?>dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
     <!-- dataTable -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/datatables/jquery.dataTables.css">
@@ -31,6 +32,10 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+=======
+    <!-- Datepicker dinar -->
+    <link href="<?php echo base_url() ?>assets/bootstrap/css/datepicker.css" rel="stylesheet" type="text/css" />
+>>>>>>> 0593b936e284208ff300d4fd7f2392456c4bc28b
   </head>
   <body class="skin-blue sidebar-mini">
     <div class="wrapper">
@@ -40,9 +45,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>R</b>DKP</span>
+          <span class="logo-mini"><b>G</b>DKP</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Retribusi</b>DKP</span>
+          <span class="logo-lg"><b>Gudang</b>DKP</span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -68,30 +73,64 @@
               <p>Deni</p>
             </div>
           </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
-          <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li><a href="<?php echo base_url(); ?>"><i class="fa fa-book"></i> <span>Home</span></a></li>
-            <li><a href="<?php echo base_url(); ?>dataRetribusiController"><i class="fa fa-book"></i> <span>Data Retribusi</span></a></li>
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Pencarian</span></a></li>
+            <li class="header">MENU</li>
+            <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Report</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-cart-plus"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Surat-surat</a></li>
-                <li><a href="index.html"><i class="fa fa-circle-o"></i>Rekap Pelanggan</a></li>
-                <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Rekap Retribusi</a></li>
+
+                <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="<?php echo base_url(); ?>pengadaanBarangController/pengadaan"><i class="fa fa-circle-o"></i> Pengadaan</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Pemda</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Hibah</a></li>
+                  </ul>
+                </li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Status Barang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-truck"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-search"></i> <span>Pencarian</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Barang</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Penanggungjawab Gudang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-book"></i> <span>Report</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
+                <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
+                <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-gear"></i> <span>Manajemen</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
+                <li><a href="index.html"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
               </ul>
             </li>
           </ul>
