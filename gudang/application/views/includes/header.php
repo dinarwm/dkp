@@ -31,6 +31,10 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url() ?>assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     
+    <!-- sweetalert -->
+    <script src="<?php echo base_url() ?>assets/swal/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/swal/dist/sweetalert.css">
+
     <!-- tambahan bootstrap3 -->
     <link href="<?php echo base_url() ?>assets/bootstrap3/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/bootstrap3/prettify-1.0.css" rel="stylesheet" type="text/css" />

@@ -1,3 +1,19 @@
+			<?php if($flag == 'sukses'){
+				echo '<script language="javascript">';
+		        echo 'swal("Berhasil!", "Data berhasil ditambahkan!", "success");';
+		        echo 'setTimeout(function(){
+						    window.location.href = "' . site_url('pengadaan/pengadaanBaru/hibah/') . '";;
+						}, 2000);';
+		        echo '</script>';
+			}
+			else if($flag == 'gagal'){
+				echo '<script language="javascript">';
+		        echo 'swal("Oops...", "Terjadi kesalahan!", "error");';
+		        echo 'setTimeout(function(){
+						    window.location.href = "' . site_url('pengadaan/pengadaanBaru/hibah/') . '";;
+						}, 2000);';
+		        echo '</script>';
+			} ?>
 			<!-- Content Wrapper. Contains page content -->
 			<div class="content-wrapper">
 				<!-- Content Header (Page header) -->
@@ -23,28 +39,28 @@
 								<!-- form start -->
 								<form role="form">
 									<div class="box-body">
-										<div class="col-md-9">
+										<div class="col-md-6">
 											<div class="form-group">
 												<label for="exampleInputEmail1">Nama Barang</label>
-												<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nama Barang">
+												<input type="text" class="form-control" id="nama_barang_hibah" name="nama_barang_hibah" placeholder="Nama Barang">
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 							                    <label for="exampleInputEmail1">Jumlah</label>
-												<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Jumlah">
+												<input type="number" class="form-control" id="jumlah_barang_hibah" name="jumlah_barang_hibah" placeholder="Jumlah">
 							                 </div><!-- /.form group -->
 							            </div>
 							            <div class="col-md-4">
 											<div class="form-group">
 												<label for="exampleInputEmail1">Harga Satuan</label>
-												<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Harga Satuan">
+												<input type="number" class="form-control" id="harga_satuan_hibah" name="harga_satuan_hibah" placeholder="Harga Satuan">
 											</div>
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
 												<label for="exampleInputEmail1">Harga Total + Pajak</label>
-												<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Harga Total + Pajak">
+												<input type="text" class="form-control" id="harga_total_hibah" name="harga_total_hibah" placeholder="Harga Total + Pajak">
 											</div>
 										</div>
 									</div><!-- /.box-body -->
