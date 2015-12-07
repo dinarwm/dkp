@@ -51,11 +51,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-<<<<<<< HEAD
 $db['default']['database'] = 'dkp_inv';
-=======
-$db['default']['database'] = 'gudang';
->>>>>>> 0593b936e284208ff300d4fd7f2392456c4bc28b
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

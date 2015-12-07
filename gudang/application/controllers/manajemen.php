@@ -29,16 +29,42 @@ class Manajemen extends CI_Controller{
         $this->user();
     }
 
-    public function user() {
+    public function user()
+    {
+        $this->load->model('user');
+        $data['user'] = $this->user->get();
         $this->load->view('includes/header');
-        $this->load->view('manajemen/user/index');
+        $this->load->view('manajemen/user/index',$data);
         $this->load->view('includes/footer');
     }
 
-    public function barang() {
-        $this->load->view('includes/header');
-        $this->load->view('manajemen/barang/index');
-        $this->load->view('includes/footer');
+    public function insertUser(){
+          $data['nama_user']=$this->input->post('nama_user');
+          $data['password']=$this->input->post('password');
+          $data['jabatan_user']=$this->input->post('jabatan_user');
+          $data['status']= 1;
+          $this->load->model('user');
+          $this->akun->insert($data);
+          redirect(base_url()."manajemen/user/index");
+    }
+
+    public function updateUser(){
+          $data['username']=$this->input->post('username');
+          $data['password']=$this->input->post('password');
+          $data['nama_user']=$this->input->post('nama_user');
+          $data['jabatan_user']=$this->input->post('jabatan_user');
+          $data['telepon_user']=$this->input->post('telepon_user');
+          $data['status']=$this->input->post('status');
+          $this->load->model('akun');
+          $this->akun->update($data);
+          redirect(base_url()."master/akun");
+    }
+
+    public function deleteUser(){
+          $username=$this->input->post('username');
+          $this->load->model('akun');
+          $this->akun->delete($username);
+          redirect(base_url()."master/akun");
     }
 
     /*public function add() {

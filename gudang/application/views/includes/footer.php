@@ -225,11 +225,10 @@
     </script>
     <script type="text/javascript">
       $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
+        $('.data_table').dataTable({
           "bPaginate": true,
           "bLengthChange": false,
-          "bFilter": false,
+          "bFilter": true,
           "bSort": true,
           "bInfo": true,
           "bAutoWidth": false
@@ -281,6 +280,14 @@
                     sideBySide: true,
                     inline: true
                 });
+        });
+    </script>
+
+     <script type="text/javascript">
+        $(function () {
+             $('#btnInsertUser').click(function(){
+                $('#insertUserModal').modal('show');
+             });
         });
     </script>
 

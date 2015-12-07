@@ -23,29 +23,27 @@ function deldata() {
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>users">
-                    <input type="submit" class="btn btn-primary" value="Tambah barang">
-                  </form>
+                  <button id="btnInsertBarang" class="btn btn-primary">Tambah barang</button>
                   <br>
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table class="table table-bordered table-striped data_table">
                     <thead>
                       <tr>
-                        <th style="background-color:#FACC2E!important" width="30px">NO</th>
-                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
-                        <th style="background-color:#FACC2E!important">STOK</th>
-                        <th style="background-color:#FACC2E!important">NOMOR KPB</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
+                        <th style="background-color:#FFFFFF!important" width="30px">NO</th>
+                        <th style="background-color:#FFFFFF!important">NAMA BARANG</th>
+                        <th style="background-color:#FFFFFF!important">STOK</th>
+                        <th style="background-color:#FFFFFF!important">NOMOR KPB</th>
+                        <th style="background-color:#FFFFFF!important">AKSI</th>
                       </tr>
                     </thead>
                     <tbody>
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th style="background-color:#FACC2E!important">NO</th>
-                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
-                        <th style="background-color:#FACC2E!important">STOK</th>
-                        <th style="background-color:#FACC2E!important">NOMOR KPB</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
+                        <th style="background-color:#FFFFFF!important">NO</th>
+                        <th style="background-color:#FFFFFF!important">NAMA BARANG</th>
+                        <th style="background-color:#FFFFFF!important">STOK</th>
+                        <th style="background-color:#FFFFFF!important">NOMOR KPB</th>
+                        <th style="background-color:#FFFFFF!important">AKSI</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -55,3 +53,22 @@ function deldata() {
           </div><!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+
+      <div class="modal" id="insertBarangModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+              <p>One fine body…</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
