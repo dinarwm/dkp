@@ -31,6 +31,10 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url() ?>assets/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     
+    <!-- sweetalert -->
+    <script src="<?php echo base_url() ?>assets/swal/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/swal/dist/sweetalert.css">
+
     <!-- tambahan bootstrap3 -->
     <link href="<?php echo base_url() ?>assets/bootstrap3/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/bootstrap3/prettify-1.0.css" rel="stylesheet" type="text/css" />
@@ -145,7 +149,7 @@
                 <i class="fa fa-truck"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
+                <li><a href="<?php echo base_url(); ?>penyaluran/penyaluranBaru"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
               </ul>
             </li>

@@ -1,6 +1,6 @@
 <?php
 
-class Penyaluran extends CI_Model
+class PenyaluranModel extends CI_Model
 {
 	public function __construct()
 	{
@@ -68,7 +68,17 @@ class Penyaluran extends CI_Model
 	{
 		$this->db->truncate($this->table);
 	}
+
+	public function getId($str)
+	{
+		$this->db->select("id_penyaluran");
+		$this->db->from("penyaluran");
+		$this->db->where("id_penyaluran like '%".$str."%'");
+		$data = $this->db->get();
+		//print_r($data->result());
+		return $data->result();
+	}
 	
 }
 
-/* End of file barang.php */
+/* End of file penyaluran.php */
