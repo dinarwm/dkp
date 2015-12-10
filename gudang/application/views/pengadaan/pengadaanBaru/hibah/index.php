@@ -41,6 +41,25 @@
 									<div class="box-body">
 										<div class="col-md-6">
 											<div class="form-group">
+												<label for="exampleInputEmail1">Nomor Berita Acara Serah Terima</label>
+												<input type="text" class="form-control" id="no_ba_serahterima_hibah" name="no_ba_serahterima" placeholder="Nomor Berita Acara Serah Terima">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+							                    <label>Tanggal Serah Terima (mm-dd-yyyy)</label>
+							                        <!-- <input type="date" name="tglclosed"/> -->
+							                    <input type="text" class="form-control" name="tgl_ba_serahterima_hibah" value="" id="dp4" >
+							                 </div><!-- /.form group -->
+							            </div>
+							            <div class="col-md-8">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Asal Penerimaan</label>
+												<input type="text" class="form-control" id="asal_penerimaan" name="asal_penerimaan" placeholder="Asal Penerimaan">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
 												<label for="exampleInputEmail1">Nama Barang</label>
 												<input type="text" class="form-control" id="nama_barang_hibah" name="nama_barang_hibah" placeholder="Nama Barang">
 											</div>

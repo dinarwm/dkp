@@ -38,7 +38,8 @@ class PengadaanModel extends CI_Model
         	}
  		}
  		else if ($data['tipe_pengadaan'] == 'hibah'){
- 			$sql = "INSERT INTO PENGADAAN (tipe_pengadaan) VALUES ('".$data['tipe_pengadaan']."' )";
+ 			//$sql = "INSERT INTO PENGADAAN (tipe_pengadaan) VALUES ('".$data['tipe_pengadaan']."' )";
+ 			$sql = "INSERT INTO PENGADAAN (no_ba_serahterima, tgl_ba_serahterima, asal_penerimaan, tipe_pengadaan) VALUES ('" . $data['no_ba_serahterima'] ."', STR_TO_DATE('".$data['tgl_ba_serahterima']."','%d/%m/%Y'), '".$data['asal_penerimaan']."', '".$data['tipe_pengadaan']."' )";
         	$result = $this->db->query($sql);
         	if($result){
         		$this->db->select_max('id_pengadaan');

@@ -54,6 +54,9 @@ class Pengadaan extends CI_Controller {
 		}
 		else if ($sumber == 'pemda'){
 			$data = array(
+				'no_ba_serahterima' => $this->input->post('no_ba_serahterima_hibah'),
+	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima_hibah'),
+	        	'asal_penerimaan' => $this->input->post('asal_penerimaan_hibah'),
 	        	'tipe_pengadaan' => 'pemda',
 	        	'nama_barang' => $this->input->post('nama_barang_hibah'),
 	        	'jumlah_barang' => $this->input->post('jumlah_barang_hibah'),

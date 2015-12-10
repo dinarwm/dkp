@@ -283,5 +283,29 @@
                 });
         });
     </script>
+    <script type="text/javascript">
+      var jumlah_detail = 0;
+      $("#btnAddBarang").click(function () {
+        jumlah_detail++;
+        document.getElementsByName("jumlah_detail")[0].value = jumlah_detail;
+        var kode_barang_add = document.getElementsByName("kode_barang_add")[0].value;
+        var nama_barang_add = document.getElementsByName("nama_barang_add")[0].value;
+        var lokasi_barang_add = document.getElementsByName("lokasi_barang_add")[0].value;
+        var jml_barang_add = document.getElementsByName("jml_barang_add")[0].value;
+        var str =
+        '/<tr id="rec_'+jumlah_detail+'">'+
+        '<td><center><input type="text" readonly name="kode_barang_'+jumlah_detail+'" value="'+kode_barang_add+'"></center></td>'+
+        '<td><center><input type="text" readonly name="nama_barang_'+jumlah_detail+'" value="'+nama_barang_add+'"></center></td>'+
+        '<td><center><input type="text" readonly name="lokasi_barang_'+jumlah_detail+'" value="'+lokasi_barang_add+'"></center></td>'+
+        '<td><center><input type="text" readonly name="jumlah_barang_'+jumlah_detail+'" value="'+jml_barang_add+'"></center></td>'+
+        '<td><center><div class="btn btn-danger btn-social" onclick="del(' + jumlah_detail + ')"><i class="fa fa-trash"></i>Hapus Barang</div></center></td>'+
+        '</tr>';
+        $("#tableDetailBarang").append(str);
+      });
+      function del(id){
+        document.getElementsByName("deleted")[0].value = document.getElementsByName("deleted")[0].value + id + ",";
+        document.getElementById("rec_" + id).remove();
+      }
+    </script>
   </body>
 </html>
