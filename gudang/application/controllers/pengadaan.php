@@ -11,6 +11,10 @@ class Pengadaan extends CI_Controller {
 		if($status != NULL){
 			$data['flag'] = $status;
 		}
+		$this->load->model('jenisBarangModel');
+		$data['jenisBarang'] = $this->jenisBarangModel->getListJenis();
+		$this->load->model('kondisiBarangModel');
+		$data['kondisiBarang'] = $this->kondisiBarangModel->getListKondisi();
 		$this->load->view('includes/header');
 		$this->load->view('pengadaan/pengadaanBaru/'.$sumber.'/index', $data);
 		$this->load->view('includes/footer');
@@ -41,7 +45,7 @@ class Pengadaan extends CI_Controller {
 	        	);
 		}
 		else if ($sumber == 'pemda'){
-			$data = array(
+			/*$data = array(
 	        	'no_ba_serahterima' => $this->input->post('no_ba_serahterima'),
 	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima'),
 	        	'asal_penerimaan' => $this->input->post('asal_penerimaan'),
@@ -50,9 +54,38 @@ class Pengadaan extends CI_Controller {
 	        	'jumlah_barang' => $this->input->post('jumlah_barang'),
 	        	'harga_satuan' => $this->input->post('harga_satuan'),
 	        	'harga_total' => $this->input->post('harga_total')
+	        	);*/
+			
+			//print_r($hehe);
+			//echo '<br>';
+			
+			$data = array(
+	        	'no_ba_serahterima' => $this->input->post('no_ba_serahterima'),
+	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima'),
+	        	'asal_penerimaan' => $this->input->post('asal_penerimaan'),
+	        	'tipe_pengadaan' => 'pemda'
 	        	);
+			$this->load->model('pengadaanModel');
+			$query = $this->pengadaanModel->insert($data);
+			
+
+			/*foreach ($data as $key => $value) {
+				echo $key . ' ' . $value . '<br> ';
+			}*/
+			echo '<br>';
+			$count = 0;
+			$hehe = array_slice($_POST, 8, -2);
+			foreach ($hehe as $key => $value) {
+				$count++;
+				echo $key . ' ' . $value . '<br> ';
+				if($count == 5){
+					$count = 0;
+					echo '<br>';
+				}
+			}
+			die();
 		}
-		else if ($sumber == 'pemda'){
+		else if ($sumber == 'hibah'){
 			$data = array(
 				'no_ba_serahterima' => $this->input->post('no_ba_serahterima_hibah'),
 	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima_hibah'),
@@ -64,8 +97,8 @@ class Pengadaan extends CI_Controller {
 	        	'harga_total' => $this->input->post('harga_total_hibah')
 	        	);
 		}
-		$this->load->model('pengadaanModel');
-		$query = $this->pengadaanModel->insert($data);
+		/*$this->load->model('pengadaanModel');
+		$query = $this->pengadaanModel->insert($data);*/
 		if($query){
 			echo '<script language="javascript">';
             echo 'window.location.href = "' . site_url('pengadaan/pengadaanBaru/' . $data['tipe_pengadaan'] . '/sukses') . '";';

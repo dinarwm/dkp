@@ -63,18 +63,47 @@
 										<div class="col-md-12">
 					                        <h3>Detail Pengadaan</h3>
 					                    </div>
-										<div class="col-md-4">
+										<!-- <div class="col-md-4">
 					                      <div class="form-group">
 					                          <label>Kode Barang</label>
 					                          <input type="text" class="form-control" name="kode_barang" id="kode_barang" value="">
 					                       </div>
+					                    </div> -->
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Jenis Barang</label>
+						                      <select class="form-control" id="jenis_barang_pemda" name="jenis_barang_pemda">
+						                      	<?php 
+						                      	if($jenisBarang != NULL)
+								                {
+								                  foreach($jenisBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_jenis ?>"><?php echo $row->nama_jenis ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
 					                    </div>
 					                    <div class="col-md-5">
 					                      <div class="form-group">
 					                          <label>Nama Barang</label>
-					                          <input type="text" class="form-control" name="nama_barang" id="nama_barang" value="">
+					                          <input type="text" class="form-control" name="nama_barang_pemda" id="nama_barang_pemda" onchange="dis()">
 					                       </div>
 					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Kondisi Barang</label>
+						                      <select class="form-control" id="kondisi_barang_pemda" name="kondisi_barang_pemda">
+						                      	<?php 
+						                      	if($kondisiBarang != NULL)
+								                {
+								                  foreach($kondisiBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_kondisi ?>"><?php echo $row->nama_kondisi ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+
 					                    <div class="col-md-10">
 					                    	
 					                    </div>
@@ -82,19 +111,19 @@
 					                    <div class="col-md-3">
 					                      <div class="form-group">
 					                          <label>Jumlah</label>
-					                          <input type="number" class="form-control" name="jumlah_barang" id="jumlah_barang" value="" onchange="calc()">
+					                          <input type="number" class="form-control" name="jumlah_barang_pemda" id="jumlah_barang_pemda" value="" onchange="calc()">
 					                       </div>
 					                    </div>
 					                    <div class="col-md-3">
 					                      <div class="form-group">
 					                          <label>Harga Satuan Barang</label>
-					                          <input type="number" class="form-control" name="harga_satuan" id="harga_satuan" value="" onchange="calc()">
+					                          <input type="number" class="form-control" name="harga_satuan_pemda" id="harga_satuan_pemda" value="" onchange="calc()">
 					                       </div>
 					                    </div>
 					                    <div class="col-md-3">
 					                      <div class="form-group">
 					                          <label>Harga Total + Pajak</label>
-					                          <input type="text" class="form-control" name="harga_total" id="harga_total" value="" readonly>
+					                          <input type="text" class="form-control" name="harga_total_pemda" id="harga_total_pemda" readonly>
 					                       </div>
 					                    </div>
 					                    <div class="col-md-7">
@@ -109,7 +138,6 @@
 				                        <table class="table table-bordered table-stripped">
 				                          <thead>
 				                            <tr>
-				                              <th><center>Kode Barang</center></th>
 				                              <th><center>Nama Barang</center></th>
 				                              <th><center>Jumlah Barang</center></th>
 				                              <th><center>Harga Satuan</center></th>
@@ -143,12 +171,19 @@
 			</div><!-- /.content-wrapper -->
 			<script type="text/javascript">
 			function calc(){
-				//var jurusan = $('#jurusanLabBaru').val();
-				var total = $('#jumlah_barang').val() * $('#harga_satuan').val();
-				//alert(total);
-				document.getElementById('harga_total').value = total;
-				//document.getElementById('harga_total_pajak').innerHTML =  total ;
-				//var total = document.getElementById('jumlah').value + document.getElementById('harga_satuan').value;
-  				//document.getElememntById('harga_total_pajak').value = total;
+
+				var total = $('#jumlah_barang_pemda').val() * $('#harga_satuan_pemda').val();
+				document.getElementById('harga_total_pemda').value = total;
 			}
+
+			function dis(){
+				var nama_barang = $('#nama_barang_pemda').val();
+				if(nama_barang == ''){
+			            $('#jenis_barang_pemda').removeAttr('disabled');
+			        }
+			        else{
+			            $('#jenis_barang_pemda').attr('disabled','disabled');
+			        }
+			}
+
 			</script>

@@ -14,7 +14,7 @@ class PengadaanModel extends CI_Model
         	$result = $this->db->query($sql);
 
         	if($result){
-        		$this->db->select_max('id_pengadaan');
+        		/*$this->db->select_max('id_pengadaan');
         		$query = $this->db->get('pengadaan');
         		if ($query->num_rows() > 0)
 				{
@@ -31,7 +31,8 @@ class PengadaanModel extends CI_Model
 				else
 				{
 					return false;
-				}
+				}*/
+				return true;
         	}
         	else{
         		return false;
@@ -65,6 +66,20 @@ class PengadaanModel extends CI_Model
         		return false;
         	}
  		}
+ 	}
+
+ 	public function getIDPengadaan(){
+ 		$this->db->select_max('id_pengadaan');
+		$query = $this->db->get('pengadaan');
+		if ($query->num_rows() > 0)
+		{
+    		$row = $query->row_array();
+    		return $row['id_pengadaan'];
+    	}
+    	else
+    	{
+    		return false;
+    	}
  	}
 }
 

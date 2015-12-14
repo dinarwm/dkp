@@ -288,14 +288,19 @@
       $("#btnAddPengadaan1").click(function () {
         jumlah_detail++;
         document.getElementsByName("jumlah_detail")[0].value = jumlah_detail;
-        var kode_barang = document.getElementsByName("kode_barang")[0].value;
-        var nama_barang = document.getElementsByName("nama_barang")[0].value;
-        var jumlah_barang = document.getElementsByName("jumlah_barang")[0].value;
-        var harga_satuan = document.getElementsByName("harga_satuan")[0].value;
-        var harga_total = document.getElementsByName("harga_total")[0].value;
+        if (document.getElementsByName("nama_barang_pemda")[0].value == '')
+        {
+          var nama_barang = document.getElementsByName("jenis_barang_pemda")[0].value
+        }
+        else
+        {
+          var nama_barang = document.getElementsByName("nama_barang_pemda")[0].value 
+        }
+        var jumlah_barang = document.getElementsByName("jumlah_barang_pemda")[0].value;
+        var harga_satuan = document.getElementsByName("harga_satuan_pemda")[0].value;
+        var harga_total = document.getElementsByName("harga_total_pemda")[0].value;
         var str =
         '/<tr id="rec_'+jumlah_detail+'">'+
-        '<td><center><input type="text" class="form-control" readonly name="kode_barang_'+jumlah_detail+'" value="'+kode_barang+'"></center></td>'+
         '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail+'" value="'+nama_barang+'"></center></td>'+
         '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail+'" value="'+jumlah_barang+'"></center></td>'+
         '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail+'" value="'+harga_satuan+'"></center></td>'+
