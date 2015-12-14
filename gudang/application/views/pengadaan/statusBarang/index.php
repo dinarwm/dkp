@@ -26,37 +26,63 @@ function deldata() {
 
                  <div class="box-body">
                   <form action="#" method="post" role="form">
-                    <div class="form-group">
+                    <div class="form-group col-xs-3">
                       <label>Bidang</label>
                       <div class="input-group">
-                        <select class="form-control" name='#'>
+                        <select class="form-control" name='id_bidang'>
+
+                          <?php
+                            
+                            foreach ($nama_bidang as $row) {
+                                echo '<option value="' . $row->id_bidang . '" selected >' .$row->nama_bidang.'</option>';
+                              }
+                            ?>
                         </select>
                       </div><!-- /.input group -->
-
-                      <form action="#" method="post" role="form">
-                      <div class="form-group">
+                    </div>
+                      <div class="form-group col-xs-3">
                       <label>Kasi</label>
                       <div class="input-group">
-                        <select class="form-control" name='#'>
+                        <select class="form-control" name='id_kasi'>
+
+                          <?php
+                            
+                            foreach ($nama_kasi as $row) {
+                                echo '<option value="' . $row->id_kasi . '" selected >' .$row->nama_kasi.'</option>';
+                              }
+                            ?>
                         </select>
                       </div><!-- /.input group -->
-
-                      <form action="#" method="post" role="form">
-                      <div class="form-group">
+                      </div>
+                      <div class="form-group col-xs-3">
                       <label>Gudang</label>
                       <div class="input-group">
-                        <select class="form-control" name='#'>
+                        <select class="form-control" name='id_gudang'>
+
+                          <?php
+                            
+                            foreach ($nama_gudang as $row) {
+                                echo '<option value="' . $row->id_gudang . '" selected >' .$row->nama_gudang.'</option>';
+                              }
+                            ?>
                         </select>
                       </div><!-- /.input group -->
-
-                      <form action="#" method="post" role="form">
-                      <div class="form-group">
+                    </div>
+                      <div class="form-group col-xs-3">
                       <label>Rak</label>
                       <div class="input-group">
-                        <select class="form-control" name='#'>
-                        </select>
-                      </div><!-- /.input group --> 
+                        <select class="form-control" name='id_rak'>
 
+                          <?php
+                            
+                            foreach ($nama_rak as $row) {
+                                echo '<option value="' . $row->id_rak . '" selected >' .$row->nama_rak.'</option>';
+                              }
+                            ?>
+                        </select>
+
+                      </div><!-- /.input group --> 
+                    </div>
                     </div><!-- /.form group -->
 
                   
