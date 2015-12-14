@@ -81,7 +81,7 @@ class Pengadaan extends CI_Controller {
 			/*foreach ($data as $key => $value) {
 				echo $key . ' ' . $value . '<br> ';
 			}*/
-			echo '<br>';
+			/*echo '<br>';
 			$count = 0;
 			$hehe = array_slice($_POST, 8, -2);
 			foreach ($hehe as $key => $value) {
@@ -92,7 +92,7 @@ class Pengadaan extends CI_Controller {
 					echo '<br>';
 				}
 			}
-			die();
+			die();*/
 		}
 		else if ($sumber == 'hibah'){
 			$data = array(
