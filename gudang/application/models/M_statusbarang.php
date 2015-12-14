@@ -25,9 +25,8 @@ class M_statusbarang extends CI_Model
 
 	public function getKasi()
 	{
-		$this->db->select('NAMA_KASI');
-		$this->db->select('ID_KASI');
-		$query = $this->db->get('kasi');
+		$q = 'SELECT kasi.nama_kasi FROM kasi WHERE kasi.id_kasi'; 
+		$query = $this->db->query($q); 
 
 		if ($query->num_rows() > 0) 
 		{
@@ -46,9 +45,8 @@ class M_statusbarang extends CI_Model
 
 	public function getRak()
 	{
-		$this->db->select('NAMA_RAK');
-		$this->db->select('ID_RAK');
-		$query = $this->db->get('rak');
+		$q = 'SELECT rak.nama_rak FROM rak WHERE rak.id_rak'; 
+		$query = $this->db->query($q); 
 
 		if ($query->num_rows() > 0) 
 		{
@@ -67,9 +65,8 @@ class M_statusbarang extends CI_Model
 	
 	public function getBidang()
 	{
-		$this->db->select('NAMA_BIDANG');
-		$this->db->select('ID_BIDANG');
-		$query = $this->db->get('bidang');
+		$q = 'SELECT bidang.nama_bidang FROM bidang WHERE bidang.id_bidang'; 
+		$query = $this->db->query($q); 
 
 		if ($query->num_rows() > 0) 
 		{
@@ -88,8 +85,9 @@ class M_statusbarang extends CI_Model
 
 	 public function getDataBarang()
     {   
-    	$q = "SELECT gudang.nama_gudang, barang.nama_barang, barang.jumlah_barang FROM gudang, barang, rak
-    	WHERE gudang.id_gudang = rak.id_rak AND rak.id_rak = barang.id_barang";
+    	$q = "SELECT bidang.nama_bidang, kasi.nama_kasi, rak.nama_rak, gudang.nama_gudang, jenis_barang.nama_jenis, jenis_barang.nomor_kpb 
+    	FROM bidang, kasi, gudang, rak, barang, jenis_barang
+    	WHERE bidang.id_bidang = kasi.id_kasi AND kasi.id_kasi = gudang.id_gudang AND gudang.id_gudang = rak.id_rak AND rak.id_rak = barang.id_barang AND barang.id_jenis = jenis_barang.id_jenis";
     	$query = $this->db->query($q);
 
     	 if ($query->num_rows() > 0) {
