@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>DKP</title>
+    <title>Gudang DKP</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url() ?>assets/style.css" rel="stylesheet" type="text/css" />
     <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/logo.ico')?>"> -->
@@ -60,7 +60,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="<?php echo base_url() ?>assets/kecil.png"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">DKP</span>
+          <span class="logo-lg">Gudang DKP</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -130,11 +130,11 @@
             <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-cart-plus"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-sign-in"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
 
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pengadaan"><i class="fa fa-circle-o"></i> Pengadaan</a></li>
                     <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pemda"><i class="fa fa-circle-o"></i> Pemda</a></li>
@@ -146,7 +146,7 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-truck"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-sign-out"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="#"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
