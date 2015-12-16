@@ -15,6 +15,10 @@ class Pengadaan extends CI_Controller {
 		$data['jenisBarang'] = $this->jenisBarangModel->getListJenis();
 		$this->load->model('kondisiBarangModel');
 		$data['kondisiBarang'] = $this->kondisiBarangModel->getListKondisi();
+		$this->load->model('rakModel');
+		$data['rak'] = $this->rakModel->getListRak();
+		$this->load->model('gudangModel');
+		$data['gudang'] = $this->gudangModel->getListGudang();
 		$this->load->view('includes/header');
 		$this->load->view('pengadaan/pengadaanBaru/'.$sumber.'/index', $data);
 		$this->load->view('includes/footer');
@@ -52,6 +56,30 @@ class Pengadaan extends CI_Controller {
 	        	'rekening_belanja' => $this->input->post('rekening_belanja'),
 	        	'tipe_pengadaan' => 'pengadaan'
 	        	);
+			$this->load->model('pengadaanModel');
+			$query = $this->pengadaanModel->insert($data);
+			if($query)
+			{
+				$id_pengadaan = $this->pengadaanModel->getIDPengadaan();
+			}
+			else
+			{
+				continue;
+			}
+
+			$count = 0;
+			$list = array();
+			$hehe = array_slice($_POST,17,-2);
+			foreach ($hehe as $key => $value) {
+				$count++;
+				$list[$count] = $value;
+				echo $key . ' ' . $value . '<br> ';
+				if($count == 6){
+					$count = 0;
+					echo '<br>';
+				}
+			}
+			die();
 		}
 		else if ($sumber == 'pemda'){
 			/*$data = array(
@@ -76,12 +104,12 @@ class Pengadaan extends CI_Controller {
 	        	);
 			$this->load->model('pengadaanModel');
 			$query = $this->pengadaanModel->insert($data);
-			
+
 
 			/*foreach ($data as $key => $value) {
 				echo $key . ' ' . $value . '<br> ';
 			}*/
-			/*echo '<br>';
+			echo '<br>';
 			$count = 0;
 			$hehe = array_slice($_POST, 8, -2);
 			foreach ($hehe as $key => $value) {
@@ -92,7 +120,7 @@ class Pengadaan extends CI_Controller {
 					echo '<br>';
 				}
 			}
-			die();*/
+			die();
 		}
 		else if ($sumber == 'hibah'){
 			$data = array(

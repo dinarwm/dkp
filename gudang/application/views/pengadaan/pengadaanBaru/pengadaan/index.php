@@ -115,14 +115,174 @@
 											</div>
 										</div>
 									</div><!-- /.box-body -->
-										
-									<div class="box-footer">
-										<button type="submit" class="btn btn-primary">Submit</button>
-									</div>
+									<div class="box-body">
+										<div class="col-md-12">
+					                        <h3>Detail Pengadaan</h3>
+					                    </div>
+										<!-- <div class="col-md-4">
+					                      <div class="form-group">
+					                          <label>Kode Barang</label>
+					                          <input type="text" class="form-control" name="kode_barang" id="kode_barang" value="">
+					                       </div>
+					                    </div> -->
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Nama Barang</label>
+						                      <select class="selectpicker" data-live-search="true" data-size="3" id="jenis_barang_pengadaan" name="jenis_barang_pengadaan">  	
+						                      	<?php 
+						                      	if($jenisBarang != NULL)
+								                {
+								                  foreach($jenisBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_jenis ?>"><?php echo $row->nama_jenis ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Kondisi Barang</label>
+						                      <select class="selectpicker" data-size="3" id="kondisi_barang_pengadaan" name="kondisi_barang_pengadaan">
+						                      	<?php 
+						                      	if($kondisiBarang != NULL)
+								                {
+								                  foreach($kondisiBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_kondisi ?>"><?php echo $row->nama_kondisi ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-10">
+					                    	<br/>
+					                    </div>
+
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Gudang</label>
+						                      <select class="selectpicker" data-size="3" id="gudang_pengadaan" name="gudang_pengadaan">
+						                      	<?php 
+						                      	if($gudang != NULL)
+								                {
+								                  foreach($gudang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_gudang ?>"><?php echo $row->nama_gudang ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Rak</label>
+						                      <select class="selectpicker" data-size="3" id="kondisi_barang_pengadaan" name="kondisi_barang_pengadaan">
+						                      	<?php 
+						                      	if($rak != NULL)
+								                {
+								                  foreach($rak as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_rak ?>"><?php echo $row->nama_rak ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+
+					                    <div class="col-md-10">
+					                    	
+					                    </div>
+					                    <br/>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Jumlah</label>
+					                          <input type="number" class="form-control" name="jumlah_barang_pengadaan" id="jumlah_barang_pengadaan" value="" onchange="calc()">
+					                       </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Harga Satuan Barang</label>
+					                          <input type="number" class="form-control" name="harga_satuan_pengadaan" id="harga_satuan_pengadaan" value="" onchange="calc()">
+					                       </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Harga Total + Pajak</label>
+					                          <input type="text" class="form-control" name="harga_total_pengadaan" id="harga_total_pengadaan" readonly>
+					                       </div>
+					                    </div>
+					                    <div class="col-md-7">
+					                    </div>
+					                    <div class="col-md-2" align="right">
+					                      <div class="btn btn-info btn-social" id="btnAddPengadaan_pengadaan"><i class="fa fa-plus"></i>Tambah Barang</div>
+					                    </div>
+									</div><!-- /.box-body -->
+									<br>
+				                  <div class="row">
+				                    <div class="col-md-9">
+				                        <table class="table table-bordered table-stripped">
+				                          <thead>
+				                            <tr>
+				                              <th><center>Nama Barang</center></th>
+				                              <th><center>Jumlah Barang</center></th>
+				                              <th><center>Harga Satuan</center></th>
+				                              <th><center>Harga Total + Pajak</center></th>
+				                              <th><center>Action</center></th>
+				                            </tr>
+				                          </thead>
+				                          <tbody id="tableDetailBarang_pengadaan">
+				                          </tbody>
+				                        </table>
+				                      </div>
+				                      <input type="hidden" name="jumlah_detail_pengadaan">
+				                  	  <input type="hidden" name="deleted_pengadaan">
+				                      <div class="col-md-7">
+					                  </div>
+				                  	  <div class="col-md-2" align="right">
+					                    <button class="btn btn-primary btn-social"><i class="fa fa-check"></i>Submit</button>  
+					                  </div>
+				                    </div>
+				                    <br/>
+				                  </div>
 								</form>
 							</div><!-- /.box -->
 						</div><!--/.col (left) -->
 					</div>   <!-- /.row -->
 				</section><!-- /.content -->
 			</div><!-- /.content-wrapper -->
-			
+			<script type="text/javascript">
+			function calc(){
+
+				var total = $('#jumlah_barang_pengadaan').val() * $('#harga_satuan_pengadaan').val();
+				document.getElementById('harga_total_pengadaan').value = total;
+			}
+
+			</script>
+			<script type="text/javascript">
+		      var jumlah_detail_pengadaan = 0;
+		      $("#btnAddPengadaan_pengadaan").click(function () {
+		        jumlah_detail_pengadaan++;
+		        document.getElementsByName("jumlah_detail_pengadaan")[0].value = jumlah_detail_pengadaan;
+		        var value_nama_barang_pengadaan = document.getElementsByName("jenis_barang_pengadaan")[0].value;
+		        //var nama_barang_pengadaan = document.getElementsByName("jenis_barang_pengadaan").text;
+		        //var nama_barang_pengadaan = elt.options[elt.selectedIndex].text;
+		        
+				var nama_barang_pengadaan = document.getElementById("jenis_barang_pengadaan").options[document.getElementById("jenis_barang_pengadaan").selectedIndex ].text;
+				var kondisi_barang_pengadaan = document.getElementsByName("kondisi_barang_pengadaan")[0].value;
+		        var jumlah_barang_pengadaan = document.getElementsByName("jumlah_barang_pengadaan")[0].value;
+		        var harga_satuan_pengadaan = document.getElementsByName("harga_satuan_pengadaan")[0].value;
+		        var harga_total_pengadaan = document.getElementsByName("harga_total_pengadaan")[0].value;
+		        var str =
+		        '/<tr id="rec_pengadaan'+jumlah_detail_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="jenis_barang_'+jumlah_detail_pengadaan+'" value="'+value_nama_barang_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="kondisi_barang_'+jumlah_detail_pengadaan+'" value="'+kondisi_barang_pengadaan+'">'+
+		        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail_pengadaan+'" value="'+nama_barang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail_pengadaan+'" value="'+jumlah_barang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail_pengadaan+'" value="'+harga_satuan_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_total_'+jumlah_detail_pengadaan+'" value="'+harga_total_pengadaan+'"></center></td>'+
+		        '<td><center><div class="btn btn-danger btn-social" onclick="del(' + jumlah_detail_pengadaan + ')"><i class="fa fa-trash"></i>Hapus Barang</div></center></td>'+
+		        '</tr>';
+		        $("#tableDetailBarang_pengadaan").append(str);
+		      });
+		      function del(id){
+		        document.getElementsByName("deleted_pengadaan")[0].value = document.getElementsByName("deleted_pengadaan")[0].value + id + ",";
+		        document.getElementById("rec_pengadaan" + id).remove();
+		      }
+		    </script>

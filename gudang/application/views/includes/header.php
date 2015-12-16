@@ -39,6 +39,12 @@
     <link href="<?php echo base_url() ?>assets/bootstrap3/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/bootstrap3/prettify-1.0.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/style.css" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+
+    <!-- bootstrap-select -->
+    <link href="<?php echo base_url() ?>assets/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url() ?>assets/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
   </head>
   <script type="text/javascript">
         function preloader(){
