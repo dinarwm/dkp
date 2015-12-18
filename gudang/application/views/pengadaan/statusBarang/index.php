@@ -26,34 +26,6 @@ function deldata() {
 
                  <div class="box-body">
                   <form action="#" method="post" role="form">
-                    <div class="form-group col-xs-3">
-                      <label>Bidang</label>
-                      <div class="input-group">
-                        <select class="form-control" name='id_bidang'>
-
-                          <?php
-                            
-                            foreach ($nama_bidang as $row) {
-                                echo '<option value="' . $row->id_bidang . '" selected >' .$row->nama_bidang.'</option>';
-                              }
-                            ?>
-                        </select>
-                      </div><!-- /.input group -->
-                    </div>
-                      <div class="form-group col-xs-3">
-                      <label>Kasi</label>
-                      <div class="input-group">
-                        <select class="form-control" name='id_kasi'>
-
-                          <?php
-                            
-                            foreach ($nama_kasi as $row) {
-                                echo '<option value="' . $row->id_kasi . '" selected >' .$row->nama_kasi.'</option>';
-                              }
-                            ?>
-                        </select>
-                      </div><!-- /.input group -->
-                      </div>
                       <div class="form-group col-xs-3">
                       <label>Gudang</label>
                       <div class="input-group">
@@ -92,8 +64,6 @@ function deldata() {
                     <thead>
                       <tr>
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
-                        <th style="background-color:#FACC2E!important">BIDANG</th>
-                        <th style="background-color:#FACC2E!important">KASI</th>
                         <th style="background-color:#FACC2E!important">GUDANG</th>
                         <th style="background-color:#FACC2E!important">RAK</th>
                         <th style="background-color:#FACC2E!important">JENIS BARANG</th>
@@ -118,8 +88,6 @@ function deldata() {
                       ?>
                       <tr>
                         <th><?php echo $count; ?></th>
-                        <th> <?php echo $row->nama_bidang;?></th>
-                        <th><?php echo $row->nama_kasi;?> </th>
                         <th><?php echo $row->nama_gudang; ?></th>
                         <th><?php echo $row->nama_rak; ?></th>
                         <th> <?php echo $row->nama_jenis;?></th>
@@ -141,8 +109,6 @@ function deldata() {
                     <tfoot>
                       <tr>
                         <th style="background-color:#FACC2E!important">NO</th>
-                        <th style="background-color:#FACC2E!important">BIDANG</th>
-                        <th style="background-color:#FACC2E!important">KASI</th>
                         <th style="background-color:#FACC2E!important">GUDANG</th>
                         <th style="background-color:#FACC2E!important">RAK</th>
                         <th style="background-color:#FACC2E!important">JENIS BARANG</th>
