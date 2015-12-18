@@ -173,8 +173,8 @@
                 <i class="fa fa-book"></i> <span>Report</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/rekapBarang"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/rekapPenyaluranBarang"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
                 <li class="active"><a href="<?php echo base_url(); ?>report/buktiPengeluaranBarang"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/kartuPersediaanBarang"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
