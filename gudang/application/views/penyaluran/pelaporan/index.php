@@ -19,11 +19,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Penyaluran Baru
+            Pelaporan Barang
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Penyaluran Barang</a></li>
-            <li class="active">Penyaluran Baru</li>
+            <li class="active">Pelaporan Penyaluran</li>
           </ol>
         </section>
 

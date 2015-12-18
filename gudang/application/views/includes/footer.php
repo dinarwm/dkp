@@ -299,12 +299,13 @@
         jumlah_detail++;
         document.getElementsByName("jumlah_detail")[0].value = jumlah_detail;
         var kode_barang_add = document.getElementsByName("kode_barang_add")[0].value;
-        var nama_barang_add = document.getElementsByName("nama_barang_add")[0].value;
+        var selectedIndex = document.getElementsByName("kode_barang_add")[0].selectedIndex;
+        var nama_barang_add = document.getElementsByName("kode_barang_add")[0][selectedIndex].innerHTML;
         var lokasi_barang_add = document.getElementsByName("lokasi_barang_add")[0].value;
         var jml_barang_add = document.getElementsByName("jml_barang_add")[0].value;
         var str =
         '/<tr id="rec_'+jumlah_detail+'">'+
-        '<td><center><input type="text" readonly name="kode_barang_'+jumlah_detail+'" value="'+kode_barang_add+'"></center></td>'+
+        '<input type="hidden" readonly name="kode_barang_'+jumlah_detail+'" value="'+kode_barang_add+'">'+
         '<td><center><input type="text" readonly name="nama_barang_'+jumlah_detail+'" value="'+nama_barang_add+'"></center></td>'+
         '<td><center><input type="text" readonly name="lokasi_barang_'+jumlah_detail+'" value="'+lokasi_barang_add+'"></center></td>'+
         '<td><center><input type="text" readonly name="jumlah_barang_'+jumlah_detail+'" value="'+jml_barang_add+'"></center></td>'+

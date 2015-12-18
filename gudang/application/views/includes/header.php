@@ -150,7 +150,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url(); ?>penyaluran/penyaluranBaru"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>pelaporan"><i class="fa fa-circle-o"></i>Pelaporan Barang</a></li>
               </ul>
             </li>
             <li class="treeview">

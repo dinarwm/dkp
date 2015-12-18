@@ -11,6 +11,7 @@ class Penyaluran extends CI_Controller {
 		// }
 		$this->load->model('penyaluranModel');
 		$this->load->model('barang');
+		$this->load->model('jenisBarang');
 	}
 
 	public function index()
@@ -22,6 +23,7 @@ class Penyaluran extends CI_Controller {
 		if($status != NULL){
 			$data['flag'] = $status;
 		}
+		$data['jenis'] = $this->jenisBarang->get();
 		$this->load->view('includes/header');
 		$this->load->view('penyaluran/penyaluranBaru/index',$data);
 		$this->load->view('includes/footer');
@@ -39,7 +41,7 @@ class Penyaluran extends CI_Controller {
 				'nomor_surat' => $this->input->post('no_surat'),
 				'tgl_surat' => date('Y-m-d', strtotime($this->input->post('tgl_surat'))),
 				'tgl_penyaluran' => date('Y-m-d', strtotime($this->input->post('tgl_penyaluran'))),
-				'status' => 1
+				'status_penyaluran' => 0
 			);
 			$result = $this->penyaluranModel->create($data);
 			if($result)
