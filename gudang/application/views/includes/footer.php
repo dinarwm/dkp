@@ -237,36 +237,6 @@
                 });
         });
     </script>
-    <script type="text/javascript">
-      var jumlah_detail = 0;
-      $("#btnAddPengadaan1").click(function () {
-        jumlah_detail++;
-        document.getElementsByName("jumlah_detail")[0].value = jumlah_detail;
-        if (document.getElementsByName("nama_barang_pemda")[0].value == '')
-        {
-          var nama_barang = document.getElementsByName("jenis_barang_pemda")[0].value
-        }
-        else
-        {
-          var nama_barang = document.getElementsByName("nama_barang_pemda")[0].value 
-        }
-        var jumlah_barang = document.getElementsByName("jumlah_barang_pemda")[0].value;
-        var harga_satuan = document.getElementsByName("harga_satuan_pemda")[0].value;
-        var harga_total = document.getElementsByName("harga_total_pemda")[0].value;
-        var str =
-        '/<tr id="rec_'+jumlah_detail+'">'+
-        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail+'" value="'+nama_barang+'"></center></td>'+
-        '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail+'" value="'+jumlah_barang+'"></center></td>'+
-        '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail+'" value="'+harga_satuan+'"></center></td>'+
-        '<td><center><input type="text" class="form-control" readonly name="harga_total_'+jumlah_detail+'" value="'+harga_total+'"></center></td>'+
-        '<td><center><div class="btn btn-danger btn-social" onclick="del(' + jumlah_detail + ')"><i class="fa fa-trash"></i>Hapus Barang</div></center></td>'+
-        '</tr>';
-        $("#tableDetailBarang").append(str);
-      });
-      function del(id){
-        document.getElementsByName("deleted")[0].value = document.getElementsByName("deleted")[0].value + id + ",";
-        document.getElementById("rec_" + id).remove();
-      }
-    </script>
+    
   </body>
 </html>

@@ -15,8 +15,7 @@ class Pengadaan extends CI_Controller {
 		$data['jenisBarang'] = $this->jenisBarangModel->getListJenis();
 		$this->load->model('kondisiBarangModel');
 		$data['kondisiBarang'] = $this->kondisiBarangModel->getListKondisi();
-		$this->load->model('rakModel');
-		$data['rak'] = $this->rakModel->getListRak();
+		
 		$this->load->model('gudangModel');
 		$data['gudang'] = $this->gudangModel->getListGudang();
 		$this->load->view('includes/header');
@@ -67,35 +66,13 @@ class Pengadaan extends CI_Controller {
 				continue;
 			}
 
-			$count = 0;
-			$list = array();
-			$hehe = array_slice($_POST,17,-2);
-			foreach ($hehe as $key => $value) {
-				$count++;
-				$list[$count] = $value;
-				echo $key . ' ' . $value . '<br> ';
-				if($count == 6){
-					$count = 0;
-					echo '<br>';
-				}
-			}
-			die();
+
+			
+			
+			$hehe = array_slice($_POST,19,-2);
+			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
-		else if ($sumber == 'pemda'){
-			/*$data = array(
-	        	'no_ba_serahterima' => $this->input->post('no_ba_serahterima'),
-	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima'),
-	        	'asal_penerimaan' => $this->input->post('asal_penerimaan'),
-	        	'tipe_pengadaan' => 'pemda',
-	        	'nama_barang' => $this->input->post('nama_barang'),
-	        	'jumlah_barang' => $this->input->post('jumlah_barang'),
-	        	'harga_satuan' => $this->input->post('harga_satuan'),
-	        	'harga_total' => $this->input->post('harga_total')
-	        	);*/
-			
-			//print_r($hehe);
-			//echo '<br>';
-			
+		else if ($sumber == 'pemda'){			
 			$data = array(
 	        	'no_ba_serahterima' => $this->input->post('no_ba_serahterima'),
 	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima'),
@@ -104,46 +81,84 @@ class Pengadaan extends CI_Controller {
 	        	);
 			$this->load->model('pengadaanModel');
 			$query = $this->pengadaanModel->insert($data);
-
-
-			/*foreach ($data as $key => $value) {
-				echo $key . ' ' . $value . '<br> ';
-			}*/
-			echo '<br>';
-			$count = 0;
-			$hehe = array_slice($_POST, 8, -2);
-			foreach ($hehe as $key => $value) {
-				$count++;
-				echo $key . ' ' . $value . '<br> ';
-				if($count == 5){
-					$count = 0;
-					echo '<br>';
-				}
+			if($query)
+			{
+				$id_pengadaan = $this->pengadaanModel->getIDPengadaan();
 			}
-			die();
+			else
+			{
+				continue;
+			}
+
+			$hehe = array_slice($_POST,10,-2);
+			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
 		else if ($sumber == 'hibah'){
 			$data = array(
 				'no_ba_serahterima' => $this->input->post('no_ba_serahterima_hibah'),
 	        	'tgl_ba_serahterima' => $this->input->post('tgl_ba_serahterima_hibah'),
 	        	'asal_penerimaan' => $this->input->post('asal_penerimaan_hibah'),
-	        	'tipe_pengadaan' => 'pemda',
-	        	'nama_barang' => $this->input->post('nama_barang_hibah'),
-	        	'jumlah_barang' => $this->input->post('jumlah_barang_hibah'),
-	        	'harga_satuan' => $this->input->post('harga_satuan_hibah'),
-	        	'harga_total' => $this->input->post('harga_total_hibah')
+	        	'tipe_pengadaan' => 'hibah'
 	        	);
+			$this->load->model('pengadaanModel');
+			$query = $this->pengadaanModel->insert($data);
+			if($query)
+			{
+				$id_pengadaan = $this->pengadaanModel->getIDPengadaan();
+			}
+			else
+			{
+				continue;
+			}
+
+			$hehe = array_slice($_POST,10,-2);
+			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
-		/*$this->load->model('pengadaanModel');
-		$query = $this->pengadaanModel->insert($data);*/
-		if($query){
+		
+	}
+
+	public function getRakGudang($id_gudang){
+		$this->load->model('rakModel');
+		$data = $this->rakModel->getRakGudang($id_gudang);
+		echo json_encode($data);
+	}
+
+	public function addBarang($hehe, $id_pengadaan, $tipe_pengadaan){
+		$list = array();
+		$count = 0;
+		$sukses = 0;
+		foreach ($hehe as $key => $value) {
+			$count++;
+			$list[$count] = $value;
+			//echo $key . ' ' . $value . '<br> ';
+			if($count == 10){
+				$count = 0;
+				$data = array(
+					'id_jenis' => $list[4],
+					'id_kondisi' => $list[7],
+					'id_rak' => $list[6],
+					'id_pengadaan' => $id_pengadaan,
+					'id_status' => '1',
+					'jumlah_barang' => $list[8],
+					'harga_satuan' => $list[9],
+					'harga_total' => $list[10]
+					);
+				$this->load->model('barangModel');
+				$this->load->model('jenisBarangModel');
+				$query = $this->barangModel->insert($data);
+				$query = $this->jenisBarangModel->updateStok($list[4], $list[8]);
+				//echo '<br>';
+				$sukses = 1;
+			}
+		}
+		if($sukses == 1){
 			echo '<script language="javascript">';
-            echo 'window.location.href = "' . site_url('pengadaan/pengadaanBaru/' . $data['tipe_pengadaan'] . '/sukses') . '";';
+            echo 'window.location.href = "' . site_url('pengadaan/pengadaanBaru/' . $tipe_pengadaan . '/sukses') . '";';
             echo '</script>';
 		}
 		else{
 			echo '<script language="javascript">';
-            echo 'window.location.href = "' . site_url('pengadaan/pengadaanBaru/'. $data['tipe_pengadaan'] .'/gagal') . '";';
+            echo 'window.location.href = "' . site_url('pengadaan/pengadaanBaru/'. $tipe_pengadaan .'/gagal') . '";';
             echo '</script>';
 		}
 	}

@@ -11,60 +11,12 @@ class PengadaanModel extends CI_Model
  		}
  		else if ($data['tipe_pengadaan'] == 'pemda'){
  			$sql = "INSERT INTO PENGADAAN (no_ba_serahterima, tgl_ba_serahterima, asal_penerimaan, tipe_pengadaan) VALUES ('" . $data['no_ba_serahterima'] ."', STR_TO_DATE('".$data['tgl_ba_serahterima']."','%d/%m/%Y'), '".$data['asal_penerimaan']."', '".$data['tipe_pengadaan']."' )";
-        	$result = $this->db->query($sql);
-
-        	if($result){
-        		/*$this->db->select_max('id_pengadaan');
-        		$query = $this->db->get('pengadaan');
-        		if ($query->num_rows() > 0)
-				{
-	        		$row = $query->row_array();
-	        		$data = array(
-					   'id_penyaluran' => $row['id_pengadaan'],
-					   'nama_barang' => $data['nama_barang'],
-					   'jumlah_barang' => $data['jumlah_barang'],
-					   'harga_satuan' => $data['harga_satuan'],
-					   'harga_total' => $data['harga_total']
-					);
-					return $this->db->insert('barang', $data); 
-				}
-				else
-				{
-					return false;
-				}*/
-				return true;
-        	}
-        	else{
-        		return false;
-        	}
+        	//$result = $this->db->query($sql);
+        	return $this->db->query($sql);
  		}
  		else if ($data['tipe_pengadaan'] == 'hibah'){
- 			//$sql = "INSERT INTO PENGADAAN (tipe_pengadaan) VALUES ('".$data['tipe_pengadaan']."' )";
  			$sql = "INSERT INTO PENGADAAN (no_ba_serahterima, tgl_ba_serahterima, asal_penerimaan, tipe_pengadaan) VALUES ('" . $data['no_ba_serahterima'] ."', STR_TO_DATE('".$data['tgl_ba_serahterima']."','%d/%m/%Y'), '".$data['asal_penerimaan']."', '".$data['tipe_pengadaan']."' )";
-        	$result = $this->db->query($sql);
-        	if($result){
-        		$this->db->select_max('id_pengadaan');
-        		$query = $this->db->get('pengadaan');
-        		if ($query->num_rows() > 0)
-				{
-	        		$row = $query->row_array();
-	        		$data = array(
-					   'id_penyaluran' => $row['id_pengadaan'],
-					   'nama_barang' => $data['nama_barang'],
-					   'jumlah_barang' => $data['jumlah_barang'],
-					   'harga_satuan' => $data['harga_satuan'],
-					   'harga_total' => $data['harga_total']
-					);
-					return $this->db->insert('barang', $data); 
-				}
-				else
-				{
-					return false;
-				}
-        	}
-        	else{
-        		return false;
-        	}
+        	return $this->db->query($sql);
  		}
  	}
 

@@ -23,7 +23,7 @@ function deldata() {
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>users">
+                  <form action="<?php echo base_url() ?>manajemen/tambahBarang">
                     <input type="submit" class="btn btn-primary" value="Tambah barang">
                   </form>
                   <br>
@@ -38,6 +38,26 @@ function deldata() {
                       </tr>
                     </thead>
                     <tbody>
+                      <?php
+                      $count=1;
+                      if($list != NULL)
+                      {
+                        foreach($list as $row)
+                        { ?>
+                        <tr>
+                          <td><?php echo $count; ?></td>
+                          <td><?php echo $row->nama_jenis; ?></td>
+                          <td><?php echo $row->stok; ?></td>
+                          <td><?php echo $row->nomor_kpb; ?></td>
+                            <td>
+                              <a href="<?php echo base_url() . 'manajemen/edit/barang' . $row->id_jenis ?>" title="Edit"><i class="fa fa-pencil text-aqua"></i></a>
+                              <a href="<?php echo base_url() . 'manajemen/delete/barang' . $row->id_jenis?>" title="Hapus" onclick="return deldata()"><i class="fa fa-trash text-red"></i></a>
+                            </td>
+                        </tr>
+                        <?php 
+                        $count = $count + 1;
+                        }
+                      }?>
                     </tbody>
                     <tfoot>
                       <tr>

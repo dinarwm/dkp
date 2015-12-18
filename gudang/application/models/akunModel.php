@@ -4,7 +4,7 @@ class AkunModel extends CI_Model
 {
     public function getListAkun()
     {
-        $query = $this->db->get_where('jenis_barang', array('deleted_at' => NULL));
+        $query = $this->db->get_where('user', array('deleted_at' => NULL));
 
         if ($query->num_rows() > 0)
         {

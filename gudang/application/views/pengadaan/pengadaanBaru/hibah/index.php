@@ -37,7 +37,7 @@
 							<!-- general form elements -->
 							<div class="box box-primary">
 								<!-- form start -->
-								<form role="form">
+								<form role="form" action="<?php echo site_url('pengadaan/insert/hibah'); ?>" method="post">
 									<div class="box-body">
 										<div class="col-md-6">
 											<div class="form-group">
@@ -55,31 +55,7 @@
 							            <div class="col-md-8">
 											<div class="form-group">
 												<label for="exampleInputEmail1">Asal Penerimaan</label>
-												<input type="text" class="form-control" id="asal_penerimaan" name="asal_penerimaan" placeholder="Asal Penerimaan">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label for="exampleInputEmail1">Nama Barang</label>
-												<input type="text" class="form-control" id="nama_barang_hibah" name="nama_barang_hibah" placeholder="Nama Barang">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-							                    <label for="exampleInputEmail1">Jumlah</label>
-												<input type="number" class="form-control" id="jumlah_barang_hibah" name="jumlah_barang_hibah" placeholder="Jumlah">
-							                 </div><!-- /.form group -->
-							            </div>
-							            <div class="col-md-4">
-											<div class="form-group">
-												<label for="exampleInputEmail1">Harga Satuan</label>
-												<input type="number" class="form-control" id="harga_satuan_hibah" name="harga_satuan_hibah" placeholder="Harga Satuan">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-												<label for="exampleInputEmail1">Harga Total + Pajak</label>
-												<input type="text" class="form-control" id="harga_total_hibah" name="harga_total_hibah" placeholder="Harga Total + Pajak">
+												<input type="text" class="form-control" id="asal_penerimaan_hibah" name="asal_penerimaan_hibah" placeholder="Asal Penerimaan">
 											</div>
 										</div>
 									</div><!-- /.box-body -->
@@ -95,8 +71,34 @@
 					                    </div> -->
 					                    <div class="col-md-3">
 					                      	<div class="form-group">
-						                      <label>Jenis Barang</label>
-						                      <select class="form-control" id="jenis_barang_hibah" name="jenis_barang_hibah">
+						                      <label>Gudang</label>
+						                      <select class="selectpicker" data-size="3" data-live-search="true" id="gudang_hibah" name="gudang_hibah" onchange="getListRak()">
+						                      	<?php 
+						                      	if($gudang != NULL)
+								                { ?>
+								                	<option value="0">---Pilih gudang---</option>
+								                  <?php foreach($gudang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_gudang ?>"><?php echo $row->nama_gudang ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Rak</label>
+						                      <select class="form-control" data-size="3" id="rak_hibah" name="rak_hibah">
+						                      </select>
+						                    </div>
+					                    </div>
+
+					                    <div class="col-md-10">
+					                    	
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Nama Barang</label>
+						                      <select class="selectpicker" data-live-search="true" data-size="3" id="jenis_barang_hibah" name="jenis_barang_hibah">  	
 						                      	<?php 
 						                      	if($jenisBarang != NULL)
 								                {
@@ -107,16 +109,10 @@
 						                      </select>
 						                    </div>
 					                    </div>
-					                    <div class="col-md-5">
-					                      <div class="form-group">
-					                          <label>Nama Barang</label>
-					                          <input type="text" class="form-control" name="nama_barang_hibah" id="nama_barang_hibah" onchange="dis()">
-					                       </div>
-					                    </div>
 					                    <div class="col-md-3">
 					                      	<div class="form-group">
 						                      <label>Kondisi Barang</label>
-						                      <select class="form-control" id="kondisi_barang_hibah" name="kondisi_barang_hibah">
+						                      <select class="selectpicker" data-size="3" id="kondisi_barang_hibah" name="kondisi_barang_hibah">
 						                      	<?php 
 						                      	if($kondisiBarang != NULL)
 								                {
@@ -127,10 +123,11 @@
 						                      </select>
 						                    </div>
 					                    </div>
-
 					                    <div class="col-md-10">
-					                    	
+					                    	<br/>
 					                    </div>
+
+					                    
 					                    <br/>
 					                    <div class="col-md-3">
 					                      <div class="form-group">
@@ -153,28 +150,30 @@
 					                    <div class="col-md-7">
 					                    </div>
 					                    <div class="col-md-2" align="right">
-					                      <div class="btn btn-info btn-social" id="btnAddPengadaan1"><i class="fa fa-plus"></i>Tambah Barang</div>
+					                      <div class="btn btn-info btn-social" id="btnAddPengadaan_hibah"><i class="fa fa-plus"></i>Tambah Barang</div>
 					                    </div>
 									</div><!-- /.box-body -->
-				                  <br>
+									<br>
 				                  <div class="row">
 				                    <div class="col-md-9">
 				                        <table class="table table-bordered table-stripped">
 				                          <thead>
 				                            <tr>
 				                              <th><center>Nama Barang</center></th>
+				                              <th><center>Gudang</center></th>
+				                              <th><center>Rak</center></th>
 				                              <th><center>Jumlah Barang</center></th>
 				                              <th><center>Harga Satuan</center></th>
 				                              <th><center>Harga Total + Pajak</center></th>
 				                              <th><center>Action</center></th>
 				                            </tr>
 				                          </thead>
-				                          <tbody id="tableDetailBarang">
+				                          <tbody id="tableDetailBarang_hibah">
 				                          </tbody>
 				                        </table>
 				                      </div>
-				                      <input type="hidden" name="jumlah_detail">
-				                  	  <input type="hidden" name="deleted">
+				                      <input type="hidden" name="jumlah_detail_hibah">
+				                  	  <input type="hidden" name="deleted_hibah">
 				                      <div class="col-md-7">
 					                  </div>
 				                  	  <div class="col-md-2" align="right">
@@ -183,9 +182,6 @@
 				                    </div>
 				                    <br/>
 				                  </div>
-									<div class="box-footer">
-										<button type="submit" class="btn btn-primary">Submit</button>
-									</div>
 								</form>
 							</div><!-- /.box -->
 						</div><!--/.col (left) -->
@@ -198,15 +194,65 @@
 				var total = $('#jumlah_barang_hibah').val() * $('#harga_satuan_hibah').val();
 				document.getElementById('harga_total_hibah').value = total;
 			}
-
-			function dis(){
-				var nama_barang = $('#nama_barang_hibah').val();
-				if(nama_barang == ''){
-			            $('#jenis_barang_hibah').removeAttr('disabled');
-			        }
-			        else{
-			            $('#jenis_barang_hibah').attr('disabled','disabled');
-			        }
-			}
-
+			function del(id){
+		        document.getElementsByName("deleted_hibah")[0].value = document.getElementsByName("deleted_hibah")[0].value + id + ",";
+		        document.getElementById("rec_hibah" + id).remove();
+		      }
 			</script>
+			<script type="text/javascript">
+		      var jumlah_detail_hibah = 0;
+		      $("#btnAddPengadaan_hibah").click(function () {
+		        jumlah_detail_hibah++;
+		        document.getElementsByName("jumlah_detail_hibah")[0].value = jumlah_detail_hibah;
+		        var value_nama_barang_hibah = document.getElementsByName("jenis_barang_hibah")[0].value;
+		        var value_gudang_hibah = document.getElementsByName("gudang_hibah")[0].value;
+		        var value_rak_hibah = document.getElementsByName("rak_hibah")[0].value;
+		        //var nama_barang_hibah = document.getElementsByName("jenis_barang_hibah").text;
+		        //var nama_barang_hibah = elt.options[elt.selectedIndex].text;
+		        
+				var nama_barang_hibah = document.getElementById("jenis_barang_hibah").options[document.getElementById("jenis_barang_hibah").selectedIndex ].text;
+				var gudang_hibah = document.getElementById("gudang_hibah").options[document.getElementById("gudang_hibah").selectedIndex ].text;
+				var rak_hibah = document.getElementById("rak_hibah").options[document.getElementById("rak_hibah").selectedIndex ].text;
+				var kondisi_barang_hibah = document.getElementsByName("kondisi_barang_hibah")[0].value;
+		        var jumlah_barang_hibah = document.getElementsByName("jumlah_barang_hibah")[0].value;
+		        var harga_satuan_hibah = document.getElementsByName("harga_satuan_hibah")[0].value;
+		        var harga_total_hibah = document.getElementsByName("harga_total_hibah")[0].value;
+		        var str =
+		        '/<tr id="rec_hibah'+jumlah_detail_hibah+'">'+
+		        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail_hibah+'" value="'+nama_barang_hibah+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="gudang2_'+jumlah_detail_hibah+'" value="'+gudang_hibah+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="rak2_'+jumlah_detail_hibah+'" value="'+rak_hibah+'"></center></td>'+
+		        '<input type="hidden" class="form-control" readonly name="jenis_barang_'+jumlah_detail_hibah+'" value="'+value_nama_barang_hibah+'">'+
+		        '<input type="hidden" class="form-control" readonly name="gudang_'+jumlah_detail_hibah+'" value="'+value_gudang_hibah+'">'+
+		        '<input type="hidden" class="form-control" readonly name="rak_'+jumlah_detail_hibah+'" value="'+value_rak_hibah+'">'+
+		        '<input type="hidden" class="form-control" readonly name="kondisi_barang_'+jumlah_detail_hibah+'" value="'+kondisi_barang_hibah+'">'+
+		        '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail_hibah+'" value="'+jumlah_barang_hibah+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail_hibah+'" value="'+harga_satuan_hibah+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_total_'+jumlah_detail_hibah+'" value="'+harga_total_hibah+'"></center></td>'+
+		        '<td><center><div class="btn btn-danger btn-social" onclick="del(' + jumlah_detail_hibah + ')"><i class="fa fa-trash"></i>Hapus Barang</div></center></td>'+
+		        '</tr>';
+		        $("#tableDetailBarang_hibah").append(str);
+		      });
+		      
+		      	function getListRak()
+				{
+				    var id_gudang = $('#gudang_hibah').val();
+				    $('#rak_hibah option').remove();
+				    $.getJSON("<?php echo base_url(); ?>pengadaan/getRakGudang/"+id_gudang , function(data){
+				      //console.log(data);
+				      //console.log(data.length);
+				      if(data.length){
+				          for(i=0; i<data.length; i++)
+				          {
+				              var obj = data[i];
+				              console.log(obj.nama_rak);
+
+				              $('#rak_hibah').append($('<option>', {
+				                  value: obj.id_rak,
+				                  text: obj.nama_rak
+				              }));
+				          }
+				      }
+				    });
+				}
+		    </script>

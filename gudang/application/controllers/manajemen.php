@@ -18,44 +18,47 @@ class Manajemen extends CI_Controller{
           redirect('dashboard');
         }*/
     }    
-    
-    /*public function index() {        
-        $this->header();
-        $this->load->view('manajemen_user/add_user');
-        $this->load->view('design/footer');
-    }*/
 
     public function index() {        
         $this->user();
     }
 
     public function user() {
+        $this->load->model('akunModel');
+        $data['list'] = $this->akunModel->getListAkun();
         $this->load->view('includes/header');
-        $this->load->view('manajemen/user/index');
+        $this->load->view('manajemen/user/index', $data);
         $this->load->view('includes/footer');
     }
 
     public function barang() {
+      $this->load->model('jenisBarangModel');
+        $data['list'] = $this->jenisBarangModel->getListJenis();
         $this->load->view('includes/header');
-        $this->load->view('manajemen/barang/index');
+        $this->load->view('manajemen/barang/index', $data);
         $this->load->view('includes/footer');
     }
 
-    /*public function add() {
-        $username = $this->input->post('username');
-        $pass = $this->input->post('pass');
-        $data = array(
-            'NAMA_LENGKAP' => $this->input->post('nama'),
-            'USERNAME' => $username,
-            'PASSWORD' => md5($pass),
-             'JABATAN' => $this->input->post('jabatan'));
-        $this->load->model('akun');
-        
-        if($this->akun->tambahUser($username, $data))
+    public function tambahBarang() {
+        $this->load->view('includes/header');
+        $this->load->view('manajemen/barang/tambah');
+        $this->load->view('includes/footer');
+    }
+
+    public function tambah($master) {
+        if($master == 'barang'){
+          $data = array(
+            'nama_jenis' => $this->input->post('nama_barang_tambah'),
+            'stok' => $this->input->post('stok_awal_tambah'),
+            'nomor_kpb' => $this->input->post('nomor_kpb_tambah'),
+            'satuan' => $this->input->post('satuan_tambah'));
+        }
+        $this->load->model('jenisBarangModel');
+        if($this->jenisBarangModel->tambahBarang($this->input->post('nama_barang_tambah'), $data))
         {
               echo '<script language="javascript">';
-              echo 'alert("Akun berhasil ditambahkan");';
-              echo 'window.location.href = "' . site_url('users/showlist') . '";';
+              echo 'alert("Barang berhasil ditambahkan");';
+              echo 'window.location.href = "' . site_url('manajemen/barang') . '";';
               echo '</script>';
         }
         else
@@ -66,6 +69,8 @@ class Manajemen extends CI_Controller{
               echo '</script>';
         }
     }
+
+    /*
 
     public function showlist() {        
         $this->load->model('akun');

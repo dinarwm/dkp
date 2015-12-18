@@ -127,6 +127,32 @@
 					                    </div> -->
 					                    <div class="col-md-3">
 					                      	<div class="form-group">
+						                      <label>Gudang</label>
+						                      <select class="selectpicker" data-size="3" data-live-search="true" id="gudang_pengadaan" name="gudang_pengadaan" onchange="getListRak()">
+						                      	<?php 
+						                      	if($gudang != NULL)
+								                { ?>
+								                	<option value="0">---Pilih gudang---</option>
+								                  <?php foreach($gudang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_gudang ?>"><?php echo $row->nama_gudang ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Rak</label>
+						                      <select class="form-control" data-size="3" id="rak_pengadaan" name="rak_pengadaan">
+						                      </select>
+						                    </div>
+					                    </div>
+
+					                    <div class="col-md-10">
+					                    	
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
 						                      <label>Nama Barang</label>
 						                      <select class="selectpicker" data-live-search="true" data-size="3" id="jenis_barang_pengadaan" name="jenis_barang_pengadaan">  	
 						                      	<?php 
@@ -157,38 +183,7 @@
 					                    	<br/>
 					                    </div>
 
-					                    <div class="col-md-3">
-					                      	<div class="form-group">
-						                      <label>Gudang</label>
-						                      <select class="selectpicker" data-size="3" id="gudang_pengadaan" name="gudang_pengadaan">
-						                      	<?php 
-						                      	if($gudang != NULL)
-								                {
-								                  foreach($gudang as $row)
-								                  { ?>
-						                        <option value="<?php echo $row->id_gudang ?>"><?php echo $row->nama_gudang ?></option>
-						                        <?php } } ?>
-						                      </select>
-						                    </div>
-					                    </div>
-					                    <div class="col-md-3">
-					                      	<div class="form-group">
-						                      <label>Rak</label>
-						                      <select class="selectpicker" data-size="3" id="kondisi_barang_pengadaan" name="kondisi_barang_pengadaan">
-						                      	<?php 
-						                      	if($rak != NULL)
-								                {
-								                  foreach($rak as $row)
-								                  { ?>
-						                        <option value="<?php echo $row->id_rak ?>"><?php echo $row->nama_rak ?></option>
-						                        <?php } } ?>
-						                      </select>
-						                    </div>
-					                    </div>
-
-					                    <div class="col-md-10">
-					                    	
-					                    </div>
+					                    
 					                    <br/>
 					                    <div class="col-md-3">
 					                      <div class="form-group">
@@ -221,6 +216,8 @@
 				                          <thead>
 				                            <tr>
 				                              <th><center>Nama Barang</center></th>
+				                              <th><center>Gudang</center></th>
+				                              <th><center>Rak</center></th>
 				                              <th><center>Jumlah Barang</center></th>
 				                              <th><center>Harga Satuan</center></th>
 				                              <th><center>Harga Total + Pajak</center></th>
@@ -253,6 +250,10 @@
 				var total = $('#jumlah_barang_pengadaan').val() * $('#harga_satuan_pengadaan').val();
 				document.getElementById('harga_total_pengadaan').value = total;
 			}
+			function del(id){
+		        document.getElementsByName("deleted_pengadaan")[0].value = document.getElementsByName("deleted_pengadaan")[0].value + id + ",";
+		        document.getElementById("rec_pengadaan" + id).remove();
+		      }
 
 			</script>
 			<script type="text/javascript">
@@ -261,19 +262,27 @@
 		        jumlah_detail_pengadaan++;
 		        document.getElementsByName("jumlah_detail_pengadaan")[0].value = jumlah_detail_pengadaan;
 		        var value_nama_barang_pengadaan = document.getElementsByName("jenis_barang_pengadaan")[0].value;
+		        var value_gudang_pengadaan = document.getElementsByName("gudang_pengadaan")[0].value;
+		        var value_rak_pengadaan = document.getElementsByName("rak_pengadaan")[0].value;
 		        //var nama_barang_pengadaan = document.getElementsByName("jenis_barang_pengadaan").text;
 		        //var nama_barang_pengadaan = elt.options[elt.selectedIndex].text;
 		        
 				var nama_barang_pengadaan = document.getElementById("jenis_barang_pengadaan").options[document.getElementById("jenis_barang_pengadaan").selectedIndex ].text;
+				var gudang_pengadaan = document.getElementById("gudang_pengadaan").options[document.getElementById("gudang_pengadaan").selectedIndex ].text;
+				var rak_pengadaan = document.getElementById("rak_pengadaan").options[document.getElementById("rak_pengadaan").selectedIndex ].text;
 				var kondisi_barang_pengadaan = document.getElementsByName("kondisi_barang_pengadaan")[0].value;
 		        var jumlah_barang_pengadaan = document.getElementsByName("jumlah_barang_pengadaan")[0].value;
 		        var harga_satuan_pengadaan = document.getElementsByName("harga_satuan_pengadaan")[0].value;
 		        var harga_total_pengadaan = document.getElementsByName("harga_total_pengadaan")[0].value;
 		        var str =
 		        '/<tr id="rec_pengadaan'+jumlah_detail_pengadaan+'">'+
-		        '<input type="hidden" class="form-control" readonly name="jenis_barang_'+jumlah_detail_pengadaan+'" value="'+value_nama_barang_pengadaan+'">'+
-		        '<input type="hidden" class="form-control" readonly name="kondisi_barang_'+jumlah_detail_pengadaan+'" value="'+kondisi_barang_pengadaan+'">'+
 		        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail_pengadaan+'" value="'+nama_barang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="gudang2_'+jumlah_detail_pengadaan+'" value="'+gudang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="rak2_'+jumlah_detail_pengadaan+'" value="'+rak_pengadaan+'"></center></td>'+
+		        '<input type="hidden" class="form-control" readonly name="jenis_barang_'+jumlah_detail_pengadaan+'" value="'+value_nama_barang_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="gudang_'+jumlah_detail_pengadaan+'" value="'+value_gudang_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="rak_'+jumlah_detail_pengadaan+'" value="'+value_rak_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="kondisi_barang_'+jumlah_detail_pengadaan+'" value="'+kondisi_barang_pengadaan+'">'+
 		        '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail_pengadaan+'" value="'+jumlah_barang_pengadaan+'"></center></td>'+
 		        '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail_pengadaan+'" value="'+harga_satuan_pengadaan+'"></center></td>'+
 		        '<td><center><input type="text" class="form-control" readonly name="harga_total_'+jumlah_detail_pengadaan+'" value="'+harga_total_pengadaan+'"></center></td>'+
@@ -281,8 +290,26 @@
 		        '</tr>';
 		        $("#tableDetailBarang_pengadaan").append(str);
 		      });
-		      function del(id){
-		        document.getElementsByName("deleted_pengadaan")[0].value = document.getElementsByName("deleted_pengadaan")[0].value + id + ",";
-		        document.getElementById("rec_pengadaan" + id).remove();
-		      }
+		      
+		      	function getListRak()
+				{
+				    var id_gudang = $('#gudang_pengadaan').val();
+				    $('#rak_pengadaan option').remove();
+				    $.getJSON("<?php echo base_url(); ?>pengadaan/getRakGudang/"+id_gudang , function(data){
+				      //console.log(data);
+				      //console.log(data.length);
+				      if(data.length){
+				          for(i=0; i<data.length; i++)
+				          {
+				              var obj = data[i];
+				              console.log(obj.nama_rak);
+
+				              $('#rak_pengadaan').append($('<option>', {
+				                  value: obj.id_rak,
+				                  text: obj.nama_rak
+				              }));
+				          }
+				      }
+				    });
+				}
 		    </script>
