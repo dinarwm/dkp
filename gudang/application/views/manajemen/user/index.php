@@ -23,7 +23,7 @@ function deldata() {
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>users">
+                  <form action="<?php echo base_url() ?>manajemen/tambahUser">
                     <input type="submit" class="btn btn-primary" value="Tambah user">
                   </form>
                   <br>

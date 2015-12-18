@@ -70,6 +70,15 @@ class Manajemen extends CI_Controller{
         }
     }
 
+    public function delete($master, $id) {
+        $this->load->model('jenisBarangModel');
+        $this->jenisBarangModel->delete($id);
+        echo '<script language="javascript">';
+        echo 'alert("Akun berhasil dihapus");';
+        echo 'window.location.href = "' . site_url('users/showlist') . '";';
+        echo '</script>';
+    }
+
     /*
 
     public function showlist() {        
@@ -80,14 +89,7 @@ class Manajemen extends CI_Controller{
         $this->load->view('design/footer');
     }
 
-    public function delete($id) {
-        $this->load->model('akun');
-        $this->akun->delete($id);
-        echo '<script language="javascript">';
-        echo 'alert("Akun berhasil dihapus");';
-        echo 'window.location.href = "' . site_url('users/showlist') . '";';
-        echo '</script>';
-    }
+    
 
     public function edit($id) {
         $this->load->model('akun');

@@ -51,7 +51,7 @@ function deldata() {
                           <td><?php echo $row->nomor_kpb; ?></td>
                             <td>
                               <a href="<?php echo base_url() . 'manajemen/edit/barang' . $row->id_jenis ?>" title="Edit"><i class="fa fa-pencil text-aqua"></i></a>
-                              <a href="<?php echo base_url() . 'manajemen/delete/barang' . $row->id_jenis?>" title="Hapus" onclick="return deldata()"><i class="fa fa-trash text-red"></i></a>
+                              <a href="<?php echo base_url() . 'manajemen/delete/barang/' . $row->id_jenis?>" title="Hapus" onclick="return deldata()"><i class="fa fa-trash text-red"></i></a>
                             </td>
                         </tr>
                         <?php 
