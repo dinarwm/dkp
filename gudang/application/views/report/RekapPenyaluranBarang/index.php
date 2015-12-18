@@ -8,11 +8,12 @@ function deldata() {
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Bukti Pengeluaran Barang
+            Rekap Penyaluran Barang
+            <small>Laporan Penyaluran Barang</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-users"></i> Report</a></li>
-            <li class="active"> Bukti Pengeluaran Barang</li>
+            <li class="active"> Rekap Penyaluran Barang</li>
           </ol>
         </section>
 
@@ -26,10 +27,13 @@ function deldata() {
                     <thead>
                       <tr>
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
-                        <th style="background-color:#FACC2E!important">NOMOR BPB</th>
-                        <th style="background-color:#FACC2E!important">GUDANG</th>
-                        <th style="background-color:#FACC2E!important">TANGGAL</th>
+                        <th style="background-color:#FACC2E!important">NOMOR SURAT</th>
+                        <th style="background-color:#FACC2E!important">TANGGAL PENYALURAN</th>
+                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
+                        <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                        <th style="background-color:#FACC2E!important">NAMA PENERIMA</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -48,20 +52,26 @@ function deldata() {
                       <tr>
                         <th><?php echo $count; ?></th>
                         <th> <?php echo $row->nomor_surat;?></th>
-                        <th><?php echo $row->nama_gudang; ?></th>
-                        <th><?php echo $row->tgl_surat; ?></th>
-                          <th><a href="<?php echo base_url('report/excelBpb') .'/'.$row->nomor_surat; ?>"><i class="fa fa-download"></i></a>
+                        <th><?php echo $row->tgl_penyaluran; ?></th>
+                        <th><?php echo $row->nama_barang; ?></th>
+                        <th><?php echo $row->jumlah_barang; ?></th>
+                        <th><?php echo $row->nama_penerima; ?></th>
+
+                          <th>
                           <a href="  "><i class="fa fa-eye text-red"></i></a></th>
                       </tr>
                       <?php $count = $count + 1; } }?>
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th style="background-color:#FACC2E!important">NO</th>
-                        <th style="background-color:#FACC2E!important">NOMOR BPB</th>
-                        <th style="background-color:#FACC2E!important">GUDANG</th>
-                        <th style="background-color:#FACC2E!important">TANGGAL</th>
+                        <th style="background-color:#FACC2E!important" width="30px">NO</th>
+                        <th style="background-color:#FACC2E!important">NOMOR SURAT</th>
+                        <th style="background-color:#FACC2E!important">TANGGAL PENYALURAN</th>
+                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
+                        <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                        <th style="background-color:#FACC2E!important">NAMA PENERIMA</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
+
                       </tr>
                     </tfoot>
                   </table>

@@ -94,6 +94,7 @@ function deldata() {
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
                         <th style="background-color:#FACC2E!important">BIDANG</th>
                         <th style="background-color:#FACC2E!important">KASI</th>
+                        <th style="background-color:#FACC2E!important">GUDANG</th>
                         <th style="background-color:#FACC2E!important">RAK</th>
                         <th style="background-color:#FACC2E!important">JENIS BARANG</th>
                         <th style="background-color:#FACC2E!important">KODE REK</th>
@@ -103,12 +104,46 @@ function deldata() {
                       </tr>
                     </thead>
                     <tbody>
+                      <?php
+                      $count=1;
+                        if($list != NULL)
+                        {
+                          // foreach ($site_operation as $row)
+                          // {
+                          //   $id = $row->id_so;
+                          //   # code...
+                          // }
+                          foreach($list as $row)
+                        {
+                      ?>
+                      <tr>
+                        <th><?php echo $count; ?></th>
+                        <th> <?php echo $row->nama_bidang;?></th>
+                        <th><?php echo $row->nama_kasi;?> </th>
+                        <th><?php echo $row->nama_gudang; ?></th>
+                        <th><?php echo $row->nama_rak; ?></th>
+                        <th> <?php echo $row->nama_jenis;?></th>
+                        <th><?php echo $row->nomor_kpb;?> </th>
+                        <th><?php echo $row->nama_barang; ?></th>
+                        <th><?php echo $row->nama_status; ?></th>
+                          <th><select class="form-control name='id_status'">
+                            <?php
+                            
+                            foreach ($nama_status as $row) {
+                                echo '<option value="' . $row->id_status . '" selected >' .$row->nama_status.'</option>';
+                              }
+                            ?>
+
+                          </select></th>
+                      </tr>
+                      <?php $count = $count + 1; } }?>
                     </tbody>
                     <tfoot>
                       <tr>
                         <th style="background-color:#FACC2E!important">NO</th>
                         <th style="background-color:#FACC2E!important">BIDANG</th>
                         <th style="background-color:#FACC2E!important">KASI</th>
+                        <th style="background-color:#FACC2E!important">GUDANG</th>
                         <th style="background-color:#FACC2E!important">RAK</th>
                         <th style="background-color:#FACC2E!important">JENIS BARANG</th>
                         <th style="background-color:#FACC2E!important">KODE REK</th>

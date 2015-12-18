@@ -3,8 +3,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Stok Opname
-            <small>Laporan Anggaran per Tahun</small>
+            Laporan Bulanan
+            <small>Laporan Anggaran per Bulan</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-users"></i> Report</a></li>
