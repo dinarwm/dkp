@@ -218,7 +218,7 @@
 		        var harga_satuan_hibah = document.getElementsByName("harga_satuan_hibah")[0].value;
 		        var harga_total_hibah = document.getElementsByName("harga_total_hibah")[0].value;
 		        var str =
-		        '/<tr id="rec_hibah'+jumlah_detail_hibah+'">'+
+		        '<tr id="rec_hibah'+jumlah_detail_hibah+'">'+
 		        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail_hibah+'" value="'+nama_barang_hibah+'"></center></td>'+
 		        '<td><center><input type="text" class="form-control" readonly name="gudang2_'+jumlah_detail_hibah+'" value="'+gudang_hibah+'"></center></td>'+
 		        '<td><center><input type="text" class="form-control" readonly name="rak2_'+jumlah_detail_hibah+'" value="'+rak_hibah+'"></center></td>'+

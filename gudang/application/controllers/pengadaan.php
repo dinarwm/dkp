@@ -66,9 +66,6 @@ class Pengadaan extends CI_Controller {
 			{
 				continue;
 			}
-
-
-			
 			
 			$hehe = array_slice($_POST,19,-2);
 			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);

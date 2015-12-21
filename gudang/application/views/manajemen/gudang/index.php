@@ -8,12 +8,12 @@ function deldata() {
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manajemen Barang
-            <small>Daftar Jenis Barang</small>
+            Manajemen Gudang
+            <small>Daftar Gudang</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-users"></i> Manajemen</a></li>
-            <li class="active">Manajemen Barang</li>
+            <li class="active">Manajemen Gudang</li>
           </ol>
         </section>
 
@@ -23,17 +23,17 @@ function deldata() {
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>manajemen/tambahBaru/barang" method="post">
-                    <input type="submit" class="btn btn-primary" value="Tambah barang">
+                  <form action="<?php echo base_url() ?>manajemen/tambahBaru/gudang" method="post">
+                    <input type="submit" class="btn btn-primary" value="Tambah gudang">
                   </form>
                   <br>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
-                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
-                        <th style="background-color:#FACC2E!important">STOK</th>
-                        <th style="background-color:#FACC2E!important">NOMOR KPB</th>
+                        <th style="background-color:#FACC2E!important">NAMA GUDANG</th>
+                        <th style="background-color:#FACC2E!important">ALAMAT GUDANG</th>
+                        <th style="background-color:#FACC2E!important">PJ GUDANG</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
                       </tr>
                     </thead>
@@ -46,12 +46,12 @@ function deldata() {
                         { ?>
                         <tr>
                           <td><?php echo $count; ?></td>
-                          <td><?php echo $row->nama_jenis; ?></td>
-                          <td><?php echo $row->stok; ?></td>
-                          <td><?php echo $row->nomor_kpb; ?></td>
+                          <td><?php echo $row->nama_gudang; ?></td>
+                          <td><?php echo $row->alamat_gudang; ?></td>
+                          <td><?php echo $row->pj_gudang; ?></td>
                             <td>
-                              <!-- <a href="<?php echo base_url() . 'manajemen/edit/barang/' . $row->id_jenis ?>" title="Edit"><i class="fa fa-pencil text-aqua"></i></a> -->
-                              <a href="<?php echo base_url() . 'manajemen/delete/barang/' . $row->id_jenis?>" title="Hapus" onclick="return deldata()"><i class="fa fa-trash text-red"></i></a>
+                              <a href="<?php echo base_url() . 'manajemen/edit/gudang/' . $row->id_gudang ?>" title="Edit"><i class="fa fa-pencil text-aqua"></i></a>
+                              <a href="<?php echo base_url() . 'manajemen/delete/gudang/' . $row->id_gudang ?>" title="Hapus" onclick="return deldata()"><i class="fa fa-trash text-red"></i></a>
                             </td>
                         </tr>
                         <?php 
@@ -61,10 +61,10 @@ function deldata() {
                     </tbody>
                     <tfoot>
                       <tr>
-                        <th style="background-color:#FACC2E!important">NO</th>
-                        <th style="background-color:#FACC2E!important">NAMA BARANG</th>
-                        <th style="background-color:#FACC2E!important">STOK</th>
-                        <th style="background-color:#FACC2E!important">NOMOR KPB</th>
+                        <th style="background-color:#FACC2E!important" width="30px">NO</th>
+                        <th style="background-color:#FACC2E!important">NAMA GUDANG</th>
+                        <th style="background-color:#FACC2E!important">ALAMAT GUDANG</th>
+                        <th style="background-color:#FACC2E!important">PJ GUDANG</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
                       </tr>
                     </tfoot>

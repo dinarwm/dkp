@@ -133,7 +133,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
-            <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <!-- <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-sign-in"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
@@ -178,7 +178,7 @@
                 <li class="active"><a href="<?php echo base_url(); ?>report/buktiPengeluaranBarang"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/kartuPersediaanBarang"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
-                <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
+                <!-- <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li> -->
               </ul>
             </li>
             <li class="treeview">
@@ -186,8 +186,10 @@
                 <i class="fa fa-gear"></i> <span>Manajemen</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url(); ?>manajemen/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
-                <li><a href="<?php echo base_url(); ?>manajemen/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/rak"><i class="fa fa-circle-o"></i>Manajemen Rak</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/gudang"><i class="fa fa-circle-o"></i>Manajemen Gudang</a></li>
+                <!-- <li><a href="<?php echo base_url(); ?>manajemen/daftar/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li> -->
               </ul>
             </li>
           </ul>
