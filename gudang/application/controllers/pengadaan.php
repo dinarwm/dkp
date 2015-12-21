@@ -26,8 +26,6 @@ class Pengadaan extends CI_Controller {
 	public function statusBarang()
     {         
         $this->load->model('M_statusbarang');
-        $data['nama_bidang'] = $this->M_statusbarang->getBidang();
-        $data['nama_kasi'] = $this->M_statusbarang->getKasi();
 		$data['nama_rak'] = $this->M_statusbarang->getRak();
         $data['nama_gudang'] = $this->M_statusbarang->getGudang();
 		
