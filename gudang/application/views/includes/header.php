@@ -93,13 +93,12 @@
                 </span>
                 </a>
               </li>
-              <li class="dropdown user user-menu">
+              <!-- <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Dinar</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <!-- User image -->
                   <li class="user-header">
                     <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="img-circle" alt="User Image" />
                     <p>
@@ -107,21 +106,17 @@
                       <small>(dinarwm)</small>
                     </p>
                   </li>
-                  <!-- Menu Footer-->
                   <li class="user-footer">
-                    <!-- <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div> -->
                     <div class="pull-right">
                       <a href="<?php echo base_url() ?>auth/doLogout" class="btn btn-default btn-flat">Keluar <i class="fa fa-sign-out"></i></a>
                     </div>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <!-- Control Sidebar Toggle Button -->
-              <li>
+              <!-- <li>
                 <a href="#" data-toggle="control-sidebar" title="Gusar? Klik tombol ini untuk bantuan"><i class="fa fa-question fa-lg"></i></a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
