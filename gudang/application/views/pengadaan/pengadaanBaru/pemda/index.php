@@ -139,6 +139,8 @@
 					                      <div class="form-group">
 					                          <label>Harga Satuan Barang</label>
 					                          <input type="number" class="form-control" name="harga_satuan_pemda" id="harga_satuan_pemda" value="" onchange="calc()">
+					                          <input type="checkbox" onclick="calc();" onclick="calc();"id="cekPajak_pemda" name="cekPajak_pemda"/>
+					                           Barang kena pajak
 					                       </div>
 					                    </div>
 					                    <div class="col-md-3">
@@ -235,9 +237,14 @@
 		      </script>
 			<script type="text/javascript">
 			function calc(){
-
+				var x = document.getElementById("cekPajak_pemda").checked;
 				var total = $('#jumlah_barang_pemda').val() * $('#harga_satuan_pemda').val();
-				document.getElementById('harga_total_pemda').value = total;
+				if (x){
+					document.getElementById('harga_total_pemda').value = total+(total*10/100);	
+				}
+				else{
+					document.getElementById('harga_total_pemda').value = total;
+				}
 			}
 
 			function getListRak()

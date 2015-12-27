@@ -139,6 +139,8 @@
 					                      <div class="form-group">
 					                          <label>Harga Satuan Barang</label>
 					                          <input type="number" class="form-control" name="harga_satuan_hibah" id="harga_satuan_hibah" value="" onchange="calc()">
+					                          <input type="checkbox" onclick="calc();" onclick="calc();"id="cekPajak_hibah" name="cekPajak_hibah"/>
+					                           Barang kena pajak
 					                       </div>
 					                    </div>
 					                    <div class="col-md-3">
@@ -190,9 +192,14 @@
 			</div><!-- /.content-wrapper -->
 			<script type="text/javascript">
 			function calc(){
-
+				var x = document.getElementById("cekPajak_hibah").checked;
 				var total = $('#jumlah_barang_hibah').val() * $('#harga_satuan_hibah').val();
-				document.getElementById('harga_total_hibah').value = total;
+				if (x){
+					document.getElementById('harga_total_hibah').value = total+(total*10/100);	
+				}
+				else{
+					document.getElementById('harga_total_hibah').value = total;
+				}
 			}
 			function del(id){
 		        document.getElementsByName("deleted_hibah")[0].value = document.getElementsByName("deleted_hibah")[0].value + id + ",";

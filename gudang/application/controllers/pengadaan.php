@@ -32,8 +32,8 @@ class Pengadaan extends CI_Controller {
         $data['list'] = $this->M_statusbarang->getDataBarang();
            // $data['site_operation'] = $this->m_manajemenodp->getSo();
 
-        $this->load->view('includes/header', $data);
-        $this->load->view('pengadaan/statusBarang/index');
+        $this->load->view('includes/header');
+        $this->load->view('pengadaan/statusBarang/index', $data);
         $this->load->view('includes/footer');
     }
 
@@ -65,7 +65,7 @@ class Pengadaan extends CI_Controller {
 				continue;
 			}
 			
-			$hehe = array_slice($_POST,19,-2);
+			$hehe = array_slice($_POST,20,-2);
 			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
 		else if ($sumber == 'pemda'){			
@@ -86,7 +86,7 @@ class Pengadaan extends CI_Controller {
 				continue;
 			}
 
-			$hehe = array_slice($_POST,10,-2);
+			$hehe = array_slice($_POST,11,-2);
 			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
 		else if ($sumber == 'hibah'){
@@ -107,7 +107,7 @@ class Pengadaan extends CI_Controller {
 				continue;
 			}
 
-			$hehe = array_slice($_POST,10,-2);
+			$hehe = array_slice($_POST,11,-2);
 			$this->addBarang($hehe, $id_pengadaan, $data['tipe_pengadaan']);
 		}
 		
