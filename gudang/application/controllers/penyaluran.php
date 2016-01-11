@@ -29,7 +29,6 @@ class Penyaluran extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 	public function insert(){
-		print_r($_POST);
 		$id_penyaluran = $this->getNextIDPenyaluran(date('dmY', strtotime($this->input->post('tgl_surat'))));
 		$jumlah_detail = $this->input->post('jumlah_detail');
 		if($jumlah_detail > 0)
@@ -40,8 +39,8 @@ class Penyaluran extends CI_Controller {
 				'nama_penerima' => $this->input->post('nama_penerima'),
 				'nomor_surat' => $this->input->post('no_surat'),
 				'tgl_surat' => date('Y-m-d', strtotime($this->input->post('tgl_surat'))),
-				'tgl_penyaluran' => date('Y-m-d', strtotime($this->input->post('tgl_penyaluran'))),
-				'status_penyaluran' => 0
+				'tgl_penyaluran' => date('Y-m-d', strtotime($this->input->post('tgl_penyaluran')))
+				//'status_penyaluran' => 0
 			);
 			$result = $this->penyaluranModel->create($data);
 			if($result)
@@ -59,9 +58,9 @@ class Penyaluran extends CI_Controller {
 					(
 						'id_penyaluran' => $id_penyaluran,
 						'lokasi_penempatan' => $this->input->post('lokasi_barang_'.$i),
-						'nama_barang' => $this->input->post('nama_barang_'.$i),
 						'jumlah_barang' => $this->input->post('jumlah_barang_'.$i),
-						'id_jenis' => $this->input->post('kode_barang_'.$i)
+						'id_jenis' => $this->input->post('kode_barang_'.$i),
+						'id_status' => 2
 					);
 					$this->barang->create($data);
 				}

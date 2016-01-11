@@ -41,38 +41,6 @@
 									<div class="box-body">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label for="exampleInputEmail1">Nomor Berita Acara Penerimaan</label>
-												<input type="text" class="form-control" id="no_ba_penerimaan" name="no_ba_penerimaan" placeholder="Nomor Berita Acara Penerimaan">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-							                    <label>Tanggal Penerimaan (mm-dd-yyyy)</label>
-							                        <!-- <input type="date" name="tglclosed"/> -->
-							                    <input type="text" class="form-control" name="tgl_ba_penerimaan" value="" id="dp4" >
-							                 </div><!-- /.form group -->
-							            </div>
-							            <div class="col-md-6">
-											<div class="form-group">
-												<label for="exampleInputEmail1">Nomor Berita Acara Pemeriksaan</label>
-												<input type="text" class="form-control" id="no_ba_pemeriksaan" name="no_ba_pemeriksaan" placeholder="Nomor Berita Acara Pemeriksaan">
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-							                    <label>Tanggal Pemeriksaan (mm-dd-yyyy)</label>
-							                        <!-- <input type="date" name="tglclosed"/> -->
-							                    <input type="text" class="form-control" name="tgl_ba_pemeriksaan" value="" id="dp2" >
-							                 </div><!-- /.form group -->
-							            </div>
-							            <div class="col-md-8">
-											<div class="form-group">
-												<label for="exampleInputEmail1">Kegiatan</label>
-												<input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Kegiatan">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
 												<label for="exampleInputEmail1">Nomor SPK</label>
 												<input type="text" class="form-control" id="nomer_spk" name="nomer_spk" placeholder="Nomor Berita Acara Pemeriksaan">
 											</div>
@@ -108,21 +76,262 @@
 												<input type="text" class="form-control" id="nilai_spk" placeholder="Nilai SPK / Kontrak" name="nilai_spk">
 											</div>
 										</div>
-										<div class="col-md-8">
+										<div class="col-md-10">
+										</div>
+										<div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Rekening Belanja</label>
+						                      <select class="selectpicker" data-size="2" id="rekening_belanja" name="rekening_belanja">
+						                        <option value="522">Belanja Barang</option>
+						                        <option value="523">Belanja Modal</option>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-10">
+										</div>
+										<!-- <div class="col-md-8">
 											<div class="form-group">
-												<label for="exampleInputEmail1">Rekening Belanja & Nilai</label>
+												<label for="exampleInputEmail1">Rekening Belanja</label>
+												<select class="selectpicker"> 
+													<option value="522">Belanja Barang & Jasa</option>
+													<option value="523">Belanja Modal</option>
+												</select>
 												<input type="text" class="form-control" id="rekening_belanja" placeholder="Rekening Belanja & Nilai" name="rekening_belanja">
 											</div>
+										</div> -->
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Nomor Berita Acara Penerimaan</label>
+												<input type="text" class="form-control" id="no_ba_penerimaan" name="no_ba_penerimaan" placeholder="Nomor Berita Acara Penerimaan">
+											</div>
 										</div>
-									</div><!-- /.box-body -->
+										<div class="col-md-4">
+											<div class="form-group">
+							                    <label>Tanggal Penerimaan (mm-dd-yyyy)</label>
+							                        <!-- <input type="date" name="tglclosed"/> -->
+							                    <input type="text" class="form-control" name="tgl_ba_penerimaan" value="" id="dp4" >
+							                 </div><!-- /.form group -->
+							            </div>
+							            <div class="col-md-6">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Nomor Berita Acara Pemeriksaan</label>
+												<input type="text" class="form-control" id="no_ba_pemeriksaan" name="no_ba_pemeriksaan" placeholder="Nomor Berita Acara Pemeriksaan">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+							                    <label>Tanggal Pemeriksaan (mm-dd-yyyy)</label>
+							                        <!-- <input type="date" name="tglclosed"/> -->
+							                    <input type="text" class="form-control" name="tgl_ba_pemeriksaan" value="" id="dp2" >
+							                 </div><!-- /.form group -->
+							            </div>
+							            <div class="col-md-8">
+											<div class="form-group">
+												<label for="exampleInputEmail1">Kegiatan</label>
+												<input type="text" class="form-control" id="kegiatan" name="kegiatan" placeholder="Kegiatan">
+											</div>
+										</div>
 										
-									<div class="box-footer">
-										<button type="submit" class="btn btn-primary">Submit</button>
-									</div>
+									</div><!-- /.box-body -->
+									<div class="box-body">
+										<div class="col-md-12">
+					                        <h3>Detail Pengadaan</h3>
+					                    </div>
+										<!-- <div class="col-md-4">
+					                      <div class="form-group">
+					                          <label>Kode Barang</label>
+					                          <input type="text" class="form-control" name="kode_barang" id="kode_barang" value="">
+					                       </div>
+					                    </div> -->
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Gudang</label>
+						                      <select class="selectpicker" data-size="3" data-live-search="true" id="gudang_pengadaan" name="gudang_pengadaan" onchange="getListRak()">
+						                      	<?php 
+						                      	if($gudang != NULL)
+								                { ?>
+								                	<option value="0">---Pilih gudang---</option>
+								                  <?php foreach($gudang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_gudang ?>"><?php echo $row->nama_gudang ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Rak</label>
+						                      <select class="form-control" data-size="3" id="rak_pengadaan" name="rak_pengadaan">
+						                      </select>
+						                    </div>
+					                    </div>
+
+					                    <div class="col-md-10">
+					                    	
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Nama Barang</label>
+						                      <select class="selectpicker" data-live-search="true" data-size="3" id="jenis_barang_pengadaan" name="jenis_barang_pengadaan">  	
+						                      	<?php 
+						                      	if($jenisBarang != NULL)
+								                {
+								                  foreach($jenisBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_jenis ?>"><?php echo $row->nama_jenis ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      	<div class="form-group">
+						                      <label>Kondisi Barang</label>
+						                      <select class="selectpicker" data-size="3" id="kondisi_barang_pengadaan" name="kondisi_barang_pengadaan">
+						                      	<?php 
+						                      	if($kondisiBarang != NULL)
+								                {
+								                  foreach($kondisiBarang as $row)
+								                  { ?>
+						                        <option value="<?php echo $row->id_kondisi ?>"><?php echo $row->nama_kondisi ?></option>
+						                        <?php } } ?>
+						                      </select>
+						                    </div>
+					                    </div>
+					                    <div class="col-md-10">
+					                    	<br/>
+					                    </div>			                    
+					                    <br/>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Jumlah</label>
+					                          <input type="number" class="form-control" name="jumlah_barang_pengadaan" id="jumlah_barang_pengadaan" value="" onchange="calc();">
+					                       </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Harga Satuan Barang</label>
+					                          <input type="number" class="form-control" name="harga_satuan_pengadaan" id="harga_satuan_pengadaan" value="" onchange="calc();">
+					                          <input type="checkbox" onclick="calc();" onclick="calc();"id="cekPajak_pengadaan" name="cekPajak_pengadaan"/>
+					                           Barang kena pajak
+					                       </div>
+					                    </div>
+					                    <div class="col-md-3">
+					                      <div class="form-group">
+					                          <label>Harga Total</label>
+					                          <input type="text" class="form-control" name="harga_total_pengadaan" id="harga_total_pengadaan" readonly>
+					                       </div>
+					                    </div>
+					                    <div class="col-md-7">
+					                    </div>
+					                    <div class="col-md-2" align="right">
+					                      <div class="btn btn-info btn-social" id="btnAddPengadaan_pengadaan"><i class="fa fa-plus"></i>Tambah Barang</div>
+					                    </div>
+									</div><!-- /.box-body -->
+									<br>
+				                  <div class="row">
+				                    <div class="col-md-9">
+				                        <table class="table table-bordered table-stripped">
+				                          <thead>
+				                            <tr>
+				                              <th><center>Nama Barang</center></th>
+				                              <th><center>Gudang</center></th>
+				                              <th><center>Rak</center></th>
+				                              <th><center>Jumlah Barang</center></th>
+				                              <th><center>Harga Satuan</center></th>
+				                              <th><center>Harga Total + Pajak</center></th>
+				                              <th><center>Action</center></th>
+				                            </tr>
+				                          </thead>
+				                          <tbody id="tableDetailBarang_pengadaan">
+				                          </tbody>
+				                        </table>
+				                      </div>
+				                      <input type="hidden" name="jumlah_detail_pengadaan">
+				                  	  <input type="hidden" name="deleted_pengadaan">
+				                      <div class="col-md-7">
+					                  </div>
+				                  	  <div class="col-md-2" align="right">
+					                    <button class="btn btn-primary btn-social"><i class="fa fa-check"></i>Submit</button>  
+					                  </div>
+				                    </div>
+				                    <br/>
+				                  </div>
 								</form>
 							</div><!-- /.box -->
 						</div><!--/.col (left) -->
 					</div>   <!-- /.row -->
 				</section><!-- /.content -->
 			</div><!-- /.content-wrapper -->
-			
+			<script type="text/javascript">
+			function calc(){
+				var x = document.getElementById("cekPajak_pengadaan").checked;
+				var total = $('#jumlah_barang_pengadaan').val() * $('#harga_satuan_pengadaan').val();
+				if (x){
+					document.getElementById('harga_total_pengadaan').value = total+(total*10/100);	
+				}
+				else{
+					document.getElementById('harga_total_pengadaan').value = total;
+				}
+			}
+			function del(id){
+		        document.getElementsByName("deleted_pengadaan")[0].value = document.getElementsByName("deleted_pengadaan")[0].value + id + ",";
+		        document.getElementById("rec_pengadaan" + id).remove();
+		      }
+
+			</script>
+			<script type="text/javascript">
+		      var jumlah_detail_pengadaan = 0;
+		      $("#btnAddPengadaan_pengadaan").click(function () {
+		        jumlah_detail_pengadaan++;
+		        document.getElementsByName("jumlah_detail_pengadaan")[0].value = jumlah_detail_pengadaan;
+		        var value_nama_barang_pengadaan = document.getElementsByName("jenis_barang_pengadaan")[0].value;
+		        var value_gudang_pengadaan = document.getElementsByName("gudang_pengadaan")[0].value;
+		        var value_rak_pengadaan = document.getElementsByName("rak_pengadaan")[0].value;
+		        
+				var nama_barang_pengadaan = document.getElementById("jenis_barang_pengadaan").options[document.getElementById("jenis_barang_pengadaan").selectedIndex ].text;
+				var gudang_pengadaan = document.getElementById("gudang_pengadaan").options[document.getElementById("gudang_pengadaan").selectedIndex ].text;
+				var rak_pengadaan = document.getElementById("rak_pengadaan").options[document.getElementById("rak_pengadaan").selectedIndex ].text;
+				var kondisi_barang_pengadaan = document.getElementsByName("kondisi_barang_pengadaan")[0].value;
+		        var jumlah_barang_pengadaan = document.getElementsByName("jumlah_barang_pengadaan")[0].value;
+		        var harga_satuan_pengadaan = document.getElementsByName("harga_satuan_pengadaan")[0].value;
+		        var harga_total_pengadaan = document.getElementsByName("harga_total_pengadaan")[0].value;
+		        var str =
+		        '/<tr id="rec_pengadaan'+jumlah_detail_pengadaan+'">'+
+		        '<td><center><input type="text" class="form-control" readonly name="nama_barang_'+jumlah_detail_pengadaan+'" value="'+nama_barang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="gudang2_'+jumlah_detail_pengadaan+'" value="'+gudang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="rak2_'+jumlah_detail_pengadaan+'" value="'+rak_pengadaan+'"></center></td>'+
+		        '<input type="hidden" class="form-control" readonly name="jenis_barang_'+jumlah_detail_pengadaan+'" value="'+value_nama_barang_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="gudang_'+jumlah_detail_pengadaan+'" value="'+value_gudang_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="rak_'+jumlah_detail_pengadaan+'" value="'+value_rak_pengadaan+'">'+
+		        '<input type="hidden" class="form-control" readonly name="kondisi_barang_'+jumlah_detail_pengadaan+'" value="'+kondisi_barang_pengadaan+'">'+
+		        '<td><center><input type="text" class="form-control"readonly name="jumlah_barang_'+jumlah_detail_pengadaan+'" value="'+jumlah_barang_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_satuan_'+jumlah_detail_pengadaan+'" value="'+harga_satuan_pengadaan+'"></center></td>'+
+		        '<td><center><input type="text" class="form-control" readonly name="harga_total_'+jumlah_detail_pengadaan+'" value="'+harga_total_pengadaan+'"></center></td>'+
+		        '<td><center><div class="btn btn-danger btn-social" onclick="del(' + jumlah_detail_pengadaan + ')"><i class="fa fa-trash"></i>Hapus Barang</div></center></td>'+
+		        '</tr>';
+		        $("#tableDetailBarang_pengadaan").append(str);
+		      });
+		      
+		      	function getListRak()
+				{
+				    var id_gudang = $('#gudang_pengadaan').val();
+				    $('#rak_pengadaan option').remove();
+				    $.getJSON("<?php echo base_url(); ?>pengadaan/getRakGudang/"+id_gudang , function(data){
+				      //console.log(data);
+				      //console.log(data.length);
+				      if(data.length){
+				          for(i=0; i<data.length; i++)
+				          {
+				              var obj = data[i];
+				              console.log(obj.nama_rak);
+
+				              $('#rak_pengadaan').append($('<option>', {
+				                  value: obj.id_rak,
+				                  text: obj.nama_rak
+				              }));
+				          }
+				      }
+				    });
+				}
+		    </script>

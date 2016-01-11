@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>DKP</title>
+    <title>Gudang DKP</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url() ?>assets/style.css" rel="stylesheet" type="text/css" />
     <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/logo.ico')?>"> -->
@@ -39,6 +39,12 @@
     <link href="<?php echo base_url() ?>assets/bootstrap3/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/bootstrap3/prettify-1.0.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url() ?>assets/style.css" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+
+    <!-- bootstrap-select -->
+    <link href="<?php echo base_url() ?>assets/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url() ?>assets/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
   </head>
   <script type="text/javascript">
         function preloader(){
@@ -60,7 +66,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="<?php echo base_url() ?>assets/kecil.png"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">DKP</span>
+          <span class="logo-lg">Gudang DKP</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -87,13 +93,12 @@
                 </span>
                 </a>
               </li>
-              <li class="dropdown user user-menu">
+              <!-- <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Dinar</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <!-- User image -->
                   <li class="user-header">
                     <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="img-circle" alt="User Image" />
                     <p>
@@ -101,21 +106,17 @@
                       <small>(dinarwm)</small>
                     </p>
                   </li>
-                  <!-- Menu Footer-->
                   <li class="user-footer">
-                    <!-- <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div> -->
                     <div class="pull-right">
                       <a href="<?php echo base_url() ?>auth/doLogout" class="btn btn-default btn-flat">Keluar <i class="fa fa-sign-out"></i></a>
                     </div>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <!-- Control Sidebar Toggle Button -->
-              <li>
+              <!-- <li>
                 <a href="#" data-toggle="control-sidebar" title="Gusar? Klik tombol ini untuk bantuan"><i class="fa fa-question fa-lg"></i></a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
@@ -127,14 +128,14 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
-            <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <!-- <li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-cart-plus"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-sign-in"></i><span>Pengadaan Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
 
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
+                <li><a href="#"><i class="fa fa-circle-o"></i>Pengadaan Baru<i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pengadaan"><i class="fa fa-circle-o"></i> Pengadaan</a></li>
                     <li><a href="<?php echo base_url(); ?>pengadaan/pengadaanBaru/pemda"><i class="fa fa-circle-o"></i> Pemda</a></li>
@@ -146,7 +147,7 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-truck"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
+                <i class="fa fa-sign-out"></i> <span>Penyaluran Barang</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url(); ?>penyaluran/penyaluranBaru"><i class="fa fa-circle-o"></i>Penyaluran Baru</a></li>
@@ -167,12 +168,12 @@
                 <i class="fa fa-book"></i> <span>Report</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/rekapBarang"><i class="fa fa-circle-o"></i>Rekap Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>report/rekapPenyaluranBarang"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
                 <li class="active"><a href="<?php echo base_url(); ?>report/buktiPengeluaranBarang"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/kartuPersediaanBarang"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
-                <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
-                <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
+                <!-- <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li> -->
+                <!-- <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li> -->
               </ul>
             </li>
             <li class="treeview">
@@ -180,8 +181,10 @@
                 <i class="fa fa-gear"></i> <span>Manajemen</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url(); ?>manajemen/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
-                <li><a href="<?php echo base_url(); ?>manajemen/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/rak"><i class="fa fa-circle-o"></i>Manajemen Rak</a></li>
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/gudang"><i class="fa fa-circle-o"></i>Manajemen Gudang</a></li>
+                <!-- <li><a href="<?php echo base_url(); ?>manajemen/daftar/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li> -->
               </ul>
             </li>
           </ul>

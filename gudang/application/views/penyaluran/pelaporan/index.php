@@ -2,7 +2,7 @@
         echo '<script language="javascript">';
             echo 'swal("Berhasil!", "Data berhasil ditambahkan!", "success");';
             echo 'setTimeout(function(){
-                window.location.href = "' . site_url('penyaluran/penyaluranBaru/') . '";;
+                window.location.href = "' . site_url('pelaporan/') . '";;
             }, 2000);';
             echo '</script>';
       }
@@ -10,7 +10,7 @@
         echo '<script language="javascript">';
             echo 'swal("Oops...", "Terjadi kesalahan!", "error");';
             echo 'setTimeout(function(){
-                window.location.href = "' . site_url('penyaluran/penyaluranBaru/') . '";;
+                window.location.href = "' . site_url('pelaporan/') . '";;
             }, 2000);';
             echo '</script>';
       } ?>
@@ -35,109 +35,126 @@
               <!-- general form elements -->
               <div class="box box-primary">
                 <!-- form start -->
-                <form role="form" action="<?php echo site_url('penyaluran/insert/'); ?>" method="post">
-                  <div class="box-body">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Nomor Surat</label>
-                          <input type="text" class="form-control" id="no_surat" name="no_surat" placeholder="Nomor Surat">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Tanggal Surat (mm-dd-yyyy)</label>
-                            <input type="text" class="form-control" name="tgl_surat" value="" id="pny_tgl_surat" >
-                         </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label>Nama Penerima</label>
-                          <input type="text" class="form-control" id="nama_penerimaan" name="nama_penerima" placeholder="Nama Penerimaan">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Tanggal Penyaluran (mm-dd-yyyy)</label>
-                            <input type="text" class="form-control" name="tgl_penyaluran" value="" id="pny_tgl_penyaluran">
-                         </div>
-                      </div>
-                    </div>
+                <div class="box-body">
+                  <div class="col-md-3">
+                    <label>Status</label>
+                      <select class="form-control selectpicker" name="statusPelaporan" id="statusPelaporan" onChange="getNomerSurat()">
+                        <option value="0">---Pilih gudang---</option>
+                        <option value="2">Belum Dilaporkan</option>
+                        <option value="3">Sudah Dilaporkan</option>
+                      </select>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="form-group">
+                      <label>Nomor Surat</label>
+                      <select class="form-control selectpicker" data-live-search="true" data-size="10" id="noSurat" name="noSurat" onChange="getBarang()">
 
-                    <div class="row">
-                      <div class="col-md-12">
-                        <h3>Detail Penyaluran</h3>
-                      </div>
-
-                      <!-- <div class="col-md-2">
-                        <div class="form-group">
-                            <label>Kode Barang</label>
-                            <input type="text" class="form-control" name="kode_barang_add" value="">
-                         </div>
-                      </div> -->
-                      <div class="col-md-7">
-                        <div class="form-group">
-                            <label>Nama Barang</label>
-                            <select class="form-control" name="kode_barang_add">
-                              <?php foreach ($jenis as $row) { ?>
-                                <option value="<?=$row->id_jenis;?>"><?=$row->nama_jenis;?></option>
-                              <?php }?>
-                              
-                            </select>
-                            <!-- <input type="text" class="form-control" name="nama_barang_add" value=""> -->
-                         </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group">
-                            <label>Jumlah Barang</label>
-                            <input type="number" class="form-control" name="jml_barang_add" value="">
-                         </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="form-group">
-                            <label>Lokasi Penempatan</label>
-                            <input type="text" class="form-control" name="lokasi_barang_add" value="">
-                         </div>
-                      </div>
-                      <div class="col-md-7">
-                      </div>
-                      <div class="col-md-2" align="right">
-                        <div class="btn btn-info btn-social" id="btnAddBarang"><i class="fa fa-plus"></i>Tambah Barang</div>
-                      </div>
+                      </select>
+                    </div>
                   </div>
                   <br>
-                  <div class="row">
-                    <div class="col-md-9">
-                        <table class="table table-bordered table-stripped">
-                          <thead>
-                            <tr>
-<!--                               <th><center>Kode Barang</center></th> -->
-                              <th><center>Nama Barang</center></th>
-                              <th><center>Lokasi Penempatan</center></th>
-                              <th><center>Jumlah Barang</center></th>
-                              <th><center>Action</center></th>
-                            </tr>
-                          </thead>
-                          <tbody id="tableDetailBarang">
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+                  <div class="col-md-12">
+                    <label>Detail Penyaluran</label>
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th style="background-color:#FACC2E!important" width="30px">NO</th>
+                          <th style="background-color:#FACC2E!important">NAMA BARANG</th>
+                          <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                          <th style="background-color:#FACC2E!important">LOKASI PENEMPATAN</th>
+                          <th style="background-color:#FACC2E!important">AKSI</th>
+                        </tr>
+                      </thead>
+                      <tbody id="detailPelaporan">
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th style="background-color:#FACC2E!important" width="30px">NO</th>
+                          <th style="background-color:#FACC2E!important">NAMA BARANG</th>
+                          <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                          <th style="background-color:#FACC2E!important">LOKASI PENEMPATAN</th>
+                          <th style="background-color:#FACC2E!important">AKSI</th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
-
-                  <input type="hidden" name="jumlah_detail">
-                  <input type="hidden" name="deleted">
-                  <div class="box-footer">
-                    <div class="col-md-9" align="right">
-                      <button class="btn btn-primary btn-social"><i class="fa fa-check"></i>Submit</button>  
-                    </div>
-                  </div>
-                </form>
+                </div>
               </div><!-- /.box -->
             </div><!--/.col (left) -->
           </div>   <!-- /.row -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
+
+
+      <script type="text/javascript">
+        function getNomerSurat()
+        {
+          $('#noSurat option').remove();
+          $('#detailPelaporan tr').remove();
+          var id_status = $('#statusPelaporan').val();
+          var baseURL = "<?php echo base_url(); ?>";
+          var str = '';
+          if(id_status){
+            $.getJSON("<?php echo base_url(); ?>pelaporan/getNomerSurat/"+id_status , function(data){
+              if(data.length){
+                  $('#noSurat').append($('<option>', {
+                      value: 0,
+                      text: "---Pilih Nomor Surat---"
+                  }));
+                  for(i=0; i<data.length; i++)
+                  {
+                      var obj = data[i];
+                      $('#noSurat').append($('<option>', {
+                          value: obj['id_penyaluran'],
+                          text: obj['nomor_surat']
+                      }));
+                      console.log(obj);
+                  }
+                  $('#noSurat').selectpicker('refresh');
+              }
+              else
+                $('#noSurat').selectpicker('refresh');
+            });
+          }
+          else
+            $('#noSurat').selectpicker('refresh');
+        }
+
+        function getBarang()
+        {
+          $('#detailPelaporan tr').remove();
+          var id_status = $('#statusPelaporan').val();
+          var id_penyaluran = $('#noSurat').val();
+          var baseURL = "<?php echo base_url(); ?>";
+          var count = 1;
+          var str = '';
+          $.getJSON("<?php echo base_url(); ?>pelaporan/getBarang/"+id_status+"/"+id_penyaluran , function(data){
+            if(data.length){
+              for(i=0; i<data.length; i++)
+              {
+                var obj = data[i];
+                console.log(obj);
+                  str =
+                  '<tr>'+
+                  '<td>'+count+'</td>'+
+                  '<td>'+obj['nama_jenis']+'</td>'+
+                  '<td>'+obj['jumlah_barang']+'</td>'+
+                  '<td>'+obj['lokasi_penempatan']+'</td>';
+                  if(id_status==2)
+                    str +=
+                    '<td><center><a href="'+baseURL+'pelaporan/tambahLaporan/'+obj['id_barang']+'" class="btn btn-info btn-social"><i class="fa fa-plus"></i>Tambah Laporan</a></center></td>'+
+                    '</tr>';
+                  else if(id_status==3){
+                    str +=
+                    '<td><center><a href="'+baseURL+'pelaporan/detailLaporan/'+obj['id_barang']+'" target="_blank" class="btn btn-success btn-social"><i class="fa fa-info"></i>Detail Laporan</a></center></td>'+
+                    '</tr>';
+                  }
+                  $("#detailPelaporan").append(str);
+                  count++;
+              }
+            }
+          });
+        }
+
+      </script>
      

@@ -33,6 +33,27 @@ function deldata() {
                       </tr>
                     </thead>
                     <tbody>
+                      <?php
+                      $count=1;
+                        if($list != NULL)
+                        {
+                          // foreach ($site_operation as $row)
+                          // {
+                          //   $id = $row->id_so;
+                          //   # code...
+                          // }
+                          foreach($list as $row)
+                        {
+                      ?>
+                      <tr>
+                        <th><?php echo $count; ?></th>
+                        <th> <?php echo $row->nomor_surat;?></th>
+                        <th><?php echo $row->nama_gudang; ?></th>
+                        <th><?php echo $row->tgl_surat; ?></th>
+                          <th><a href="<?php echo base_url('report/excelBpb') .'/'.$row->nomor_surat; ?>"><i class="fa fa-download"></i></a>
+                          <a href="  "><i class="fa fa-eye text-red"></i></a></th>
+                      </tr>
+                      <?php $count = $count + 1; } }?>
                     </tbody>
                     <tfoot>
                       <tr>
