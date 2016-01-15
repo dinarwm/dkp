@@ -12,6 +12,11 @@
 
         <!-- Main content -->
         <section class="content">
-          
+          <div align="center">
+            <img src="<?php echo base_url() ?>assets/gundam3.png">  
+            <h1>
+              Sistem Informasi Gudang dan Administrasi Barang
+            </h1>
+          </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->

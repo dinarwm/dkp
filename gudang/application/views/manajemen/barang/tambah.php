@@ -23,15 +23,17 @@
                   <div class="box-body">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Nama Barang</label>
+                        <label>Nama Barang</label>
                         <input type="text" class="form-control" id="nama_barang_tambah" name="nama_barang_tambah" >
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Nomor KPB</label>
+                        <label>Nomor KPB</label>
                         <input type="text" class="form-control" id="nomor_kpb_tambah" name="nomor_kpb_tambah">
                       </div>
+                    </div>
+                    <div class="col-md-10">
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
@@ -41,8 +43,17 @@
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Satuan</label>
+                        <label>Satuan</label>
                         <input type="text" class="form-control" id="satuan_tambah" name="satuan_tambah">
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Foto Barang</label>
+                        <input name="fotoBarang" id="fotoBarang" type="file" tabindex="1" value="NULL" />
+                        <p class="help-block">Pastikan foto yang diupload dalam format .jpg atau .png</p>
                       </div>
                     </div>
                   </div><!-- /.box-body -->

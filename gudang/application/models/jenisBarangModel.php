@@ -63,7 +63,18 @@ class JenisBarangModel extends CI_Model
         else
         {
             $this->db->insert('jenis_barang', $data); 
-            return TRUE;
+            
+            $this->db->select_max('id_jenis');
+            $query = $this->db->get('jenis_barang');
+            if ($query->num_rows() > 0)
+            {
+                $row = $query->row_array();
+                return $row['id_jenis'];
+            }
+            else
+            {
+                return FALSE;
+            }
         }
     }
 

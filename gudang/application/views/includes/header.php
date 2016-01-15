@@ -5,7 +5,7 @@
     <title>Gudang DKP</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<?php echo base_url() ?>assets/style.css" rel="stylesheet" type="text/css" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/logo.ico')?>"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('assets/favicon.ico')?>">
     <!-- Bootstrap 3.3.4 -->
     <link href="<?php echo base_url() ?>assets/bootstrap3/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Buat tanggal -->
@@ -66,7 +66,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><img src="<?php echo base_url() ?>assets/kecil.png"></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">Gudang DKP</span>
+          <span class="logo-lg"><img src="<?php echo base_url() ?>assets/gundam3.png" height="43px"></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -184,7 +184,7 @@
                 <li><a href="<?php echo base_url(); ?>manajemen/daftar/barang"><i class="fa fa-circle-o"></i>Manajemen Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>manajemen/daftar/rak"><i class="fa fa-circle-o"></i>Manajemen Rak</a></li>
                 <li><a href="<?php echo base_url(); ?>manajemen/daftar/gudang"><i class="fa fa-circle-o"></i>Manajemen Gudang</a></li>
-                <!-- <li><a href="<?php echo base_url(); ?>manajemen/daftar/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li> -->
+                <li><a href="<?php echo base_url(); ?>manajemen/daftar/user"><i class="fa fa-circle-o"></i>Menejemen User</a></li>
               </ul>
             </li>
           </ul>
