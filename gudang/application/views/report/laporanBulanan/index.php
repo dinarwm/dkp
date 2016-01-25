@@ -17,8 +17,9 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
+
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>users">
+                  <form action="">
                     <div class="form-group">
                       <div class="col-md-2">
                         <label>Tahun</label>
@@ -34,10 +35,24 @@
                         <select class="form-control" id="bulanLaporanBulanan">
                           <option value="">----</option>
                         </select>
-                      </div>
+                      </div><br>
+                      <button type="submit" class="btn btn-success" id="">Pilih</button>
                     </div>
                   </form>
                   <br>
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      <th><a href="<?php echo base_url('report/excelLapBul') ?>">
+                      <button type="submit" class="btn btn-success" id="bulan">Download</button></a></th>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                  </table>
+
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
             </div><!-- /.col -->
@@ -49,7 +64,7 @@
         {
             var tahun = $('#tahunLaporanBulanan').val();
             var list = 
-            '<option value="Januari">Januari</option><option value="Februari">Februari</option><option value="Maret">Maret</option><option value="April">April</option>';
+            '<option value="Januari">Januari</option><option value="Februari">Februari</option><option value="Maret">Maret</option><option value="April">April</option><option value="Mei">Mei</option><option value="Juni">Juni</option><option value="Juli">Juli</option><option value="Agustus">Agustus</option><option value="September">September</option><option value="Oktober">Oktober</option><option value="November">November</option><option value="Desember">Desember</option>';
             $('#bulanLaporanBulanan option').remove();
             $('#bulanLaporanBulanan').append(list);
         }

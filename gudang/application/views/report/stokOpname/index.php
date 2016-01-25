@@ -18,7 +18,8 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-                  <form action="<?php echo base_url() ?>users">
+
+                  <form action="">
                     <div class="form-group">
                       <div class="col-md-2">
                         <label>Tahun Anggaran</label>
@@ -29,6 +30,24 @@
                           <option>2015</option>
                         </select>
                       </div>
+                      <br>
+                      <button type="submit" class="btn btn-success" id="">Pilih</button>
+                    </div>
+                  </form>
+                  <br>
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      <th><a href="<?php echo base_url('report/excelStok') ?>">
+                      <button type="submit" class="btn btn-success" id="bulan">Download</button></a></th>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                  </table>
+
                     </div>
                   </form>
                   <br>

@@ -32,7 +32,6 @@ function deldata() {
                         <th style="background-color:#FACC2E!important">NAMA BARANG</th>
                         <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
                         <th style="background-color:#FACC2E!important">NAMA PENERIMA</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
 
                       </tr>
                     </thead>
@@ -53,12 +52,12 @@ function deldata() {
                         <th><?php echo $count; ?></th>
                         <th> <?php echo $row->nomor_surat;?></th>
                         <th><?php echo $row->tgl_penyaluran; ?></th>
-                        <th><?php echo $row->nama_barang; ?></th>
+                        <th><?php echo $row->nama_jenis; ?></th>
                         <th><?php echo $row->jumlah_barang; ?></th>
                         <th><?php echo $row->nama_penerima; ?></th>
 
-                          <th>
-                          <a href="  "><i class="fa fa-eye text-red"></i></a></th>
+                          <!-- <th>
+                          <a href="  "><i class="fa fa-eye text-red"></i></a></th> -->
                       </tr>
                       <?php $count = $count + 1; } }?>
                     </tbody>
@@ -70,7 +69,6 @@ function deldata() {
                         <th style="background-color:#FACC2E!important">NAMA BARANG</th>
                         <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
                         <th style="background-color:#FACC2E!important">NAMA PENERIMA</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
 
                       </tr>
                     </tfoot>

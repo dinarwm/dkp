@@ -29,10 +29,10 @@ function deldata() {
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
                         <th style="background-color:#FACC2E!important">NAMA BARANG</th>
                         <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                        <th style="background-color:#FACC2E!important">TIPE PENGADAAN</th>
                         <th style="background-color:#FACC2E!important">ASAL PENERIMAAN</th>
                         <th style="background-color:#FACC2E!important">TANGGAL PENERIMAAN</th>
                         <th style="background-color:#FACC2E!important">NOMOR SPK</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
 
                       </tr>
                     </thead>
@@ -51,14 +51,13 @@ function deldata() {
                       ?>
                       <tr>
                         <th><?php echo $count; ?></th>
-                        <th> <?php echo $row->nama_barang;?></th>
+                        <th> <?php echo $row->nama_jenis;?></th>
                         <th><?php echo $row->jumlah_barang; ?></th>
+                        <th><?php echo $row->tipe_pengadaan; ?></th>
                         <th><?php echo $row->asal_penerimaan; ?></th>
                         <th><?php echo $row->tgl_ba_penerimaan; ?></th>
                         <th><?php echo $row->nomer_spk; ?></th>
 
-                          <th>
-                          <a href="  "><i class="fa fa-eye text-red"></i></a></th>
                       </tr>
                       <?php $count = $count + 1; } }?>
                     </tbody>
@@ -67,10 +66,10 @@ function deldata() {
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
                         <th style="background-color:#FACC2E!important">NAMA BARANG</th>
                         <th style="background-color:#FACC2E!important">JUMLAH BARANG</th>
+                        <th style="background-color:#FACC2E!important">TIPE PENGADAAN</th>
                         <th style="background-color:#FACC2E!important">ASAL PENERIMAAN</th>
                         <th style="background-color:#FACC2E!important">TANGGAL PENERIMAAN</th>
                         <th style="background-color:#FACC2E!important">NOMOR SPK</th>
-                        <th style="background-color:#FACC2E!important">AKSI</th>
 
                       </tr>
                     </tfoot>

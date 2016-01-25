@@ -52,7 +52,7 @@ function deldata() {
                         <th><?php echo $row->nama_gudang; ?></th>
                         <th><?php echo $row->nama_jenis; ?></th>
                           <th><a href="<?php echo base_url('report/excelKpb') .'/'.$row->nomor_kpb; ?>"><i class="fa fa-download"></i></a>
-                          <a href="  "><i class="fa fa-eye text-red"></i></a></th>
+                          <!-- <a href="  "><i class="fa fa-eye text-red"></i></a> --></th>
                       </tr>
                       <?php $count = $count + 1; } }?>
                     </tbody>

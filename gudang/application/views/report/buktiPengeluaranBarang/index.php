@@ -28,6 +28,7 @@ function deldata() {
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
                         <th style="background-color:#FACC2E!important">NOMOR BPB</th>
                         <th style="background-color:#FACC2E!important">GUDANG</th>
+                        <th style="background-color:#FACC2E!important">JENIS BARANG</th>
                         <th style="background-color:#FACC2E!important">TANGGAL</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
                       </tr>
@@ -49,9 +50,10 @@ function deldata() {
                         <th><?php echo $count; ?></th>
                         <th> <?php echo $row->nomor_surat;?></th>
                         <th><?php echo $row->nama_gudang; ?></th>
+                        <th><?php echo $row->nama_jenis; ?></th>
                         <th><?php echo $row->tgl_surat; ?></th>
                           <th><a href="<?php echo base_url('report/excelBpb') .'/'.$row->nomor_surat; ?>"><i class="fa fa-download"></i></a>
-                          <a href="  "><i class="fa fa-eye text-red"></i></a></th>
+                          <!-- <a href="  "><i class="fa fa-eye text-red"></i></a> --></th>
                       </tr>
                       <?php $count = $count + 1; } }?>
                     </tbody>
@@ -60,6 +62,7 @@ function deldata() {
                         <th style="background-color:#FACC2E!important">NO</th>
                         <th style="background-color:#FACC2E!important">NOMOR BPB</th>
                         <th style="background-color:#FACC2E!important">GUDANG</th>
+                        <th style="background-color:#FACC2E!important">JENIS BARANG</th>
                         <th style="background-color:#FACC2E!important">TANGGAL</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
                       </tr>

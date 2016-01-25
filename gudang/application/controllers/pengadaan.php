@@ -33,14 +33,13 @@ class Pengadaan extends CI_Controller {
 	public function statusBarang()
     {         
         $this->load->model('M_statusbarang');
-		$data['nama_rak'] = $this->M_statusbarang->getRak();
-        $data['nama_gudang'] = $this->M_statusbarang->getGudang();
-		
-        $data['list'] = $this->M_statusbarang->getDataBarang();
-           // $data['site_operation'] = $this->m_manajemenodp->getSo();
+		$data['gudang'] = $this->M_statusbarang->getGudang();
+        $data['nama_status'] = $this->M_statusbarang->getStatusBarang();
 
-        $this->load->view('includes/header');
-        $this->load->view('pengadaan/statusBarang/index', $data);
+        $data['list'] = $this->M_statusbarang->getRekapBarang();
+
+        $this->load->view('includes/header', $data);
+        $this->load->view('pengadaan/statusBarang/index');
         $this->load->view('includes/footer');
     }
 

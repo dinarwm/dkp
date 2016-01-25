@@ -192,8 +192,8 @@
                 <li><a href="<?php echo base_url(); ?>report/rekapPenyaluranBarang"><i class="fa fa-circle-o"></i>Rekap Penyaluran Barang</a></li>
                 <li class="active"><a href="<?php echo base_url(); ?>report/buktiPengeluaranBarang"><i class="fa fa-circle-o"></i>Bukti Pengeluaran Barang</a></li>
                 <li><a href="<?php echo base_url(); ?>report/kartuPersediaanBarang"><i class="fa fa-circle-o"></i>Kartu Persediaan Barang</a></li>
-                <!-- <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li> -->
-                <!-- <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li> -->
+                <li><a href="<?php echo base_url(); ?>report/laporanBulanan"><i class="fa fa-circle-o"></i>Laporan Bulanan</a></li>
+                <li class="active"><a href="<?php echo base_url(); ?>report/stokOpname"><i class="fa fa-circle-o"></i>Stok Opname</a></li>
               </ul>
             </li>
             <li class="treeview">
