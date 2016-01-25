@@ -60,8 +60,37 @@ class Manajemen extends CI_Controller{
             'stok' => $this->input->post('stok_awal_tambah'),
             'nomor_kpb' => $this->input->post('nomor_kpb_tambah'),
             'satuan' => $this->input->post('satuan_tambah'));
+
+          $target_Path = NULL;
+          if ($_FILES['fotoBarang']['name'] != NULL)
+          {
+              $path_parts = pathinfo($_FILES["fotoBarang"]["name"]);
+              $extension = $path_parts['extension'];
+              $extension = ".".$extension;
+              $target_Path = "fotoBarang/";
+              $url = base_url() . 'fotoBarang/';
+              //$target_Path = $target_Path . $_FILES["fotoBarang"]["name"];
+          }   
+
           $this->load->model('jenisBarangModel');
           $query = $this->jenisBarangModel->tambahBarang($this->input->post('nama_barang_tambah'), $data);
+        /*$this->load->model('barang');
+        $idBarang = $this->barang->add($dataBarang);*/
+        
+        if ($query)
+        {
+            if ($target_Path != NULL)
+            {
+                $target_Path = $target_Path . $query . '_' . $_FILES["fotoBarang"]["name"];  
+                $dataBarang['fotoBarang'] = $url . $idBarang . '_' . $_FILES["fotoBarang"]["name"];
+                $update = $this->jenisBarangModel->updateFoto($query, $dataBarang);
+                move_uploaded_file( $_FILES['fotoBarang']['tmp_name'], $target_Path );
+                  
+            }
+        }
+
+
+          
         }
         else if($master == 'user'){
           $data = array(
@@ -156,7 +185,9 @@ class Manajemen extends CI_Controller{
       
       if ($master == 'user'){
         $this->load->model('akunModel');
+        $this->load->model('gudangModel');
         $data['result'] = $this->akunModel->getAkun($id);
+        $data['gudang'] = $this->gudangModel->getListGudang();
       }
       /*else if ($master == 'barang'){
         $this->load->model('jenisBarangModel');

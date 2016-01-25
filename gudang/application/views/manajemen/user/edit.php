@@ -36,7 +36,7 @@
                             { ?>
                               <?php foreach($gudang as $row2)
                               { ?>
-                                <option value="<?php echo $row2->id_gudang ?>" <?php if($row2->id_gudang == $row['hak_akses']) { echo 'selected'; } ?> ><?php echo $row2->nama_gudang ?></option>
+                                <option value="<?php echo $row2->id_gudang ?>" <?php if($row2->id_gudang == $row['hak_akses']) { echo 'selected'; } ?> > <?php echo $row2->nama_gudang ?></option>
                               <?php } } ?>
                             <option value="0">Administrator</option>
                           </select>
