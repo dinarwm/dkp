@@ -6,6 +6,9 @@ class Statusbarang extends CI_Controller{
 	{
 
 		parent::__construct();
+		if($this->session->userdata('login') != TRUE){
+			redirect('auth');
+		}
 
 	}
 

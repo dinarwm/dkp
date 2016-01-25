@@ -66,6 +66,18 @@ class AkunModel extends CI_Model
         $this->db->update('user', $data);
         return TRUE;
     }
+
+    public function login($nama_user, $password)
+    {
+        $data = $this->db->get_where('user', array('username' => $nama_user,'password' => $password));
+        return count($data->result());
+    }
+
+    public function getDetail($nama_user, $password)
+    {
+        $data = $this->db->get_where('user', array('username' => $nama_user,'password' => $password));
+        return $data->result();
+    }
 }
 
 /* End of file layanan_model.php */

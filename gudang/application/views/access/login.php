@@ -26,7 +26,7 @@ function checkNull()
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>CASSANDRA</title>
+    <title>SI GUNDAM</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="<?=base_url('assets/bootstrap/css/bootstrap.min.css');?>" rel="stylesheet" type="text/css" />
@@ -45,17 +45,17 @@ function checkNull()
     <![endif]-->
   </head>
 
-  <body style="background-image:url('<?php echo base_url() ?>assets/dist/img/loginhahaha.jpg');background-size: cover;background-position: left;" class="login-page">
+  <body class="login-page">
 
     <!-- <div class="login-logo" style="padding-top: 50px !important;">
         <a href="<?=base_url();?>" style="color:#ffffff;text-shadow: 2px 2px 4px #000000;"><b>CASSANDRA</b><br style="margin-top: 0px !important;"><small><small><small>(Customer Handling Arrangement)</small></small></small></a>
     </div> --><!-- /.login-logo -->
 
-    <div class="login-box" style="padding-top: 50px !important;">
+    <div class="login-box">
   
-      <div class="login-box-body" style=" background-color: #DD4B39 !important; color: white !important; ">
-        <h1 align="center"><b>CASSANDRA</b></h1>
-        <p class="login-box-msg" style="padding-top: 0px !important; margin-top: 0px !important;">Customer Handling Arrangement</p>
+      <div class="login-box-body">
+        <h1 align="center"><b>SI GUNDAM</b></h1>
+        <p class="login-box-msg" style="padding-top: 0px !important; margin-top: 0px !important;">Sistem Informasi Gudang dan Administrasi Barang</p>
         <hr>
         <?php if ($error)
             {
@@ -66,20 +66,13 @@ function checkNull()
           <div class="form-group has-feedback">
               <input type="text" name="username" id="username" 
                      class="form-control" placeholder="Username" autofocus="" value=""/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
               <input type="password" name="password" id="password" 
                      class="form-control" placeholder="Password" value=""/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
-          
-          <?php
-          if(!empty($ref) || $ref != '')
-          {
-            echo '<input type="hidden" name="ref" value="'.$ref.'">';
-          }
-          ?>
 
           <div class="row">
               <div class="col-xs-12">
@@ -87,59 +80,9 @@ function checkNull()
               </div><!-- /.col -->
           </div>
           </form>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Anggota Kerja Praktik<br/>Teknik Informatika ITS 2015</h4>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col-xs-6">
-                    <p style="text-align:center;">
-                      <img src="<?php echo base_url() ?>assets/dist/img/dinar.jpg" alt="User Image" style="border-radius:50%;max-width:100%;height:auto;"/>
-                      <a class="users-list-name" href="#">Dinar Winia Mahandhira</a>
-                      <span class="users-list-date">5112100002</span>
-                      <span class="users-list-date"><a href="mailto:dinar.mahandhira@gmail.com" target="_blank">dinar.mahandhira@gmail.com</a></span>
-                    </p>
-
-                    <p style="text-align:center;">
-                      <img src="<?php echo base_url() ?>assets/dist/img/ratih.jpg" alt="User Image" style="border-radius:50%;max-width:100%;height:auto;"/>
-                      <a class="users-list-name" href="#">Ratih Ayu Indraswari</a>
-                      <span class="users-list-date">5112100122</span>
-                      <span class="users-list-date"><a href="mailto:ratihayuratih@gmail.com" target="_blank">ratihayuratih@gmail.com</a></span>            
-                    </p>
-                  </div>
-
-                  <div class="col-xs-6">
-
-                    <p style="text-align:center;">
-                      <img src="<?php echo base_url() ?>assets/dist/img/fariz2.jpg" alt="User Image" style="border-radius:50%;max-width:100%;height:auto;"/>
-                      <a class="users-list-name" href="#">Fariz Aulia Pradipta</a>
-                      <span class="users-list-date">5112100021</span>
-                      <span class="users-list-date"><a href="mailto:farizauliapradipta@gmail.com" target="_blank">farizauliapradipta@gmail.com</a></span>
-                    </p>
-
-                    <p style="text-align:center;">
-                      <img src="<?php echo base_url() ?>assets/dist/img/azis.jpg" alt="User Image" style="border-radius:50%;max-width:100%;height:auto;"/>
-                      <a class="users-list-name" href="#">Azis Arijaya</a>
-                      <span class="users-list-date">5112100155</span>
-                      <span class="users-list-date"><a href="mailto:azis.arijaya@gmail.com" target="_blank">azis.arijaya@gmail.com</a></span>
-                    </p>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- <a href="#">I forgot my password</a><br> -->
         <div class="social-auth-links text-center">
-          <a href="#" data-toggle="modal" data-target="#myModal" style="color: white !important;"><p><b>Kerja Praktik ITS Telkom Malang</b></a> &copy; 2015
+          <p><b>Dinas Kebersihan dan Pertamanan Kota Surabaya</b> &copy; 2015
               <br>
              Version 1.0
           </p>

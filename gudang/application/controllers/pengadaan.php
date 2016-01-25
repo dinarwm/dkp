@@ -2,6 +2,13 @@
 
 class Pengadaan extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();
+        if($this->session->userdata('login') != TRUE){
+            redirect('auth');
+        }
+    }    
 	public function index()
 	{
 		$this->pengadaanBaru();

@@ -93,17 +93,17 @@
                 </span>
                 </a>
               </li>
-              <!-- <li class="dropdown user user-menu">
+              <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Dinar</span>
+                  <span class="hidden-xs"><?=$this->session->userdata('nama_user');?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="user-header">
                     <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="img-circle" alt="User Image" />
                     <p>
-                      Dinar
-                      <small>(dinarwm)</small>
+                      <?=$this->session->userdata('nama_user');?>
+                      <small><?=$this->session->userdata('jabatan');?></small>
                     </p>
                   </li>
                   <li class="user-footer">
@@ -112,7 +112,7 @@
                     </div>
                   </li>
                 </ul>
-              </li> -->
+              </li>
               <!-- Control Sidebar Toggle Button -->
               <!-- <li>
                 <a href="#" data-toggle="control-sidebar" title="Gusar? Klik tombol ini untuk bantuan"><i class="fa fa-question fa-lg"></i></a>

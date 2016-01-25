@@ -2,6 +2,10 @@
 
 class Pencarian extends CI_Controller {
 
+	if($this->session->userdata('login') != TRUE){
+            redirect('auth');
+        }
+        
 	public function index()
 	{
 		$this->barang();

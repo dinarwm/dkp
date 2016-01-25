@@ -4,14 +4,9 @@ class Home extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        /*if($this->session->userdata('login') != TRUE)
-		{
-            $this->load->helper('url');
-            $current_uri = base_url(uri_string());
-            $encoded_url = urlencode($current_uri);
-            $redirect_to = 'auth?ref='.$encoded_url;
-            redirect($redirect_to);
-		}*/
+        if($this->session->userdata('login') != TRUE){
+            redirect('auth');
+        }
     }    
     
     /*public function index() {        

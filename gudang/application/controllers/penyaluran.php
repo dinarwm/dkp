@@ -5,10 +5,9 @@ class Penyaluran extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		// if($this->session->userdata('login') != TRUE || $this->session->userdata('hakAkses') == "umum")
-		// {
-		// 	redirect('auth');
-		// }
+		if($this->session->userdata('login') != TRUE){
+            redirect('auth');
+        }
 		$this->load->model('penyaluranModel');
 		$this->load->model('barang');
 		$this->load->model('jenisBarang');
