@@ -7,7 +7,8 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Manajemen</a></li>
-            <li><a href="active">User</a></li>
+            <li><a href="<?=base_url();?>manajemen/daftar/user">Manajemen User</a></li>
+            <li><a class="active">Tambah User</a></li>
           </ol>
         </section>
 
@@ -43,6 +44,14 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Nama</label>
                         <input type="text" class="form-control" id="nama_tambah" name="nama_tambah" >
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="username_tambah" name="username_tambah" >
                       </div>
                     </div>
                     <div class="col-md-10">

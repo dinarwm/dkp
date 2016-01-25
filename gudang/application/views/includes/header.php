@@ -103,7 +103,27 @@
                     <img src="<?php echo base_url() ?>assets/dist/img/user2.png" class="img-circle" alt="User Image" />
                     <p>
                       <?=$this->session->userdata('nama_user');?>
-                      <small><?=$this->session->userdata('jabatan');?></small>
+                      <small>
+                        <?php 
+                          switch ($this->session->userdata('jabatan')) {
+                            case 0:
+                                echo "Admin";
+                                break;
+                            case 1:
+                                echo "Penerangan Jalan Umum (PJU)";
+                                break;
+                            case 2:
+                                echo "Alat Tulis Kantor";
+                                break;
+                            case 3:
+                                echo "Peralatan Kebersihan";
+                                break;
+                            case 4:
+                                echo "Tanaman";
+                                break;
+                          }
+                          ?>
+                      </small>
                     </p>
                   </li>
                   <li class="user-footer">

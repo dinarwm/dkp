@@ -95,7 +95,8 @@ class Manajemen extends CI_Controller{
         else if($master == 'user'){
           $data = array(
             'nama_user' => $this->input->post('nama_tambah'),
-            'hak_akses' => $this->input->post('jabatan_tambah'),
+            'jabatan' => $this->input->post('jabatan_tambah'),
+            'username' => $this->input->post('username_tambah'),
             'password' => md5($this->input->post('password_tambah'))
             );  
           $this->load->model('akunModel');
@@ -212,7 +213,7 @@ class Manajemen extends CI_Controller{
     public function update($master, $id) {
       if ($master == 'user'){
         $data = array(
-          'hak_akses' => $this->input->post('jabatan_edit'),
+          'jabatan' => $this->input->post('jabatan_edit'),
           'nama_user' => $this->input->post('nama_edit')
           );
         if ($this->input->post('password_edit') != NULL)

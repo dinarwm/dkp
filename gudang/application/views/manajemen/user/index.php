@@ -23,58 +23,13 @@ function deldata() {
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body">
-<<<<<<< HEAD
-                  <button id="btnInsertUser" class="btn btn-primary">Tambah User</button>
-=======
                   <form action="<?php echo base_url() ?>manajemen/tambahBaru/user" method="post">
                     <input type="submit" class="btn btn-primary" value="Tambah user">
                   </form>
->>>>>>> 97646638e95f2f08cf88c4038695a2e3078261b0
                   <br>
                   <table class="table table-bordered table-striped data_table">
                     <thead>
                       <tr>
-<<<<<<< HEAD
-                        <th style="background-color:#FFFFFF!important" width="30px">NO</th>
-                        <th style="background-color:#FFFFFF!important">NAMA LENGKAP</th>
-                        <th style="background-color:#FFFFFF!important">USERNAME</th>
-                        <th style="background-color:#FFFFFF!important">HAK AKSES</th>
-                        <th style="background-color:#FFFFFF!important">STATUS </th>
-                        <th style="background-color:#FFFFFF!important">AKSI</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php $i=1; foreach ($user as $row) {?>
-                      <tr>
-                        <td><?php echo $i++?></td>
-                        <td><?php echo $row->id_user?></td>
-                        <td><?php echo $row->nama_user?></td>
-                        <td><?php echo $row->jabatan?></td>
-                        <td>
-                          <?php if ($row->status == 1){
-                            echo "Active";}
-                            else{
-                              echo "Non-Active";
-                          }?>
-                        </td>
-                        <td>
-                          <center>
-                          <button id="<?php echo $row->nama_user?>" class="btn btn-primary" style="width:75px"><i class="edit icon"></i>Edit</button>
-                          <button id="del<?php echo $row->nama_user?>" class="btn btn-primary" style="width:75px"><i class="remove user icon"></i>Hapus</button>
-                          </center>
-                        </td>
-                      </tr>
-                      <?php } ?>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th style="background-color:#FFFFFF!important">NO</th>
-                        <th style="background-color:#FFFFFF!important">NAMA LENGKAP</th>
-                        <th style="background-color:#FFFFFF!important">USERNAME</th>
-                        <th style="background-color:#FFFFFF!important">HAK AKSES</th>
-                        <th style="background-color:#FFFFFF!important">STATUS </th>
-                        <th style="background-color:#FFFFFF!important">AKSI</th>
-=======
                         <th style="background-color:#FACC2E!important" width="30px">NO</th>
                         <th style="background-color:#FACC2E!important">NAMA LENGKAP</th>
                         <th style="background-color:#FACC2E!important">HAK AKSES</th>
@@ -93,7 +48,7 @@ function deldata() {
                           <td><?php echo $row->nama_user; ?></td>
                           <td>
                             <?php 
-                            switch ($row->hak_akses) {
+                            switch ($row->jabatan) {
                               case 0:
                                   echo "Admin";
                                   break;
@@ -128,7 +83,6 @@ function deldata() {
                         <th style="background-color:#FACC2E!important">NAMA LENGKAP</th>
                         <th style="background-color:#FACC2E!important">HAK AKSES</th>
                         <th style="background-color:#FACC2E!important">AKSI</th>
->>>>>>> 97646638e95f2f08cf88c4038695a2e3078261b0
                       </tr>
                     </tfoot>
                   </table>

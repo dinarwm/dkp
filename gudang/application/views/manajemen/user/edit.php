@@ -7,7 +7,8 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Manajemen</a></li>
-            <li><a href="active">User</a></li>
+            <li><a href="<?=base_url();?>manajemen/daftar/user">Manajemen User</a></li>
+            <li><a class="active">Edit User</a></li>
           </ol>
         </section>
 
@@ -31,14 +32,14 @@
                       <div class="form-group">
                           <label>Hak Akses</label><br/>
                           <select class="selectpicker" data-live-search="true" id="jabatan_edit" name="jabatan_edit">
+                            <option value="0" selected>Administrator</option>
                             <?php 
                             if($gudang != NULL)
                             { ?>
                               <?php foreach($gudang as $row2)
                               { ?>
-                                <option value="<?php echo $row2->id_gudang ?>" <?php if($row2->id_gudang == $row['hak_akses']) { echo 'selected'; } ?> > <?php echo $row2->nama_gudang ?></option>
+                                <option value="<?php echo $row2->id_gudang ?>" <?php if($row2->id_gudang == $row['jabatan']) { echo 'selected'; } ?> > <?php echo $row2->nama_gudang ?></option>
                               <?php } } ?>
-                            <option value="0">Administrator</option>
                           </select>
                       </div>
                     </div>
@@ -48,6 +49,14 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Nama</label>
                         <input type="text" class="form-control" id="nama_edit" name="nama_edit" value="<?php echo $row['nama_user'] ?>" >
+                      </div>
+                    </div>
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="nama_edit" name="username_edit" value="<?php echo $row['username'] ?>" >
                       </div>
                     </div>
                     <div class="col-md-10">

@@ -7,7 +7,8 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Manajemen</a></li>
-            <li><a href="active">Gudang</a></li>
+            <li><a href="<?=base_url();?>manajemen/daftar/gudang">Manajemen Gudang</a></li>
+            <li><a class="active">Tambah Gudang</a></li>
           </ol>
         </section>
 
